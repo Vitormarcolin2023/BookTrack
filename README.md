@@ -1,7 +1,9 @@
 📚 BookTrack: Sistema de Gerenciamento de Livros
+
   O BookTrack é um site que permite aos usuários gerenciarem seus livros lidos, livros que estão lendo e até mesmo aqueles que não gostaram. Com ele, é possível ter um controle sobre suas leituras, avaliar cada livro e registrar suas impressões.
 
 👥 Equipe
+
   O desenvolvimento deste projeto contou com a colaboração de:
   •	Cecília Quaresma: Programadora, responsável pela interface visual do site.
   •	Josiane Steiernagel: Product Owner, idealizadora e responsável por definir o escopo do projeto.
@@ -11,6 +13,7 @@
   •	Vitor Marcolin: Programador, contribuindo para o desenvolvimento das funcionalidades do site.
   
 ✨ Funcionalidades
+
   O sistema oferece as seguintes funcionalidades:
   •	Apresentação da meta estipulada e livros cadastrados: O sistema deve apresentar a meta de leitura estipulada e os livros cadastrados na página inicial;
   •	Definição de meta de leitura: O sistema deve permitir que o usuário defina uma meta de leitura anual;
