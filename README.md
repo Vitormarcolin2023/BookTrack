@@ -10,7 +10,7 @@
   
   •	Josiane Steiernagel: Product Owner, idealizadora e responsável por definir o escopo do projeto.
   
-  •	Letícia Martins: Scrum Master, responsável por garantir que a equipe siga os princípios e práticas do Scrum, facilitando o trabalho em equipe e resolvendo possíveis impedimentos.
+  •	Lethicia Martins: Scrum Master, responsável por garantir que a equipe siga os princípios e práticas do Scrum, facilitando o trabalho em equipe e resolvendo possíveis impedimentos.
   
   •	Matheus Guerios: Programador, responsável pela interface visual do site, em conjunto com a Cecília.
   
