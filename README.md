@@ -37,3 +37,8 @@
   •	Editar livros: O sistema deve permitir que o usuário edite as informações dos livros cadastrados;
   
   •	Visualizar informações dos livros: O sistema deve permitir que o usuário visualize as informações do livro que selecionar, como: Título, autor, resenha e classificação;
+
+
+🧑‍💻 Técnologias Utilizadas
+
+  (fazer a descrição)
