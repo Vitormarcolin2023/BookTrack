@@ -41,4 +41,10 @@
 
 🧑‍💻 Técnologias Utilizadas
 
-  (fazer a descrição)
+•	O layout do site é feito em HTML e estilos CSS para torná-lo bonito e fácil de usar. 
+
+•	JavaScript é a chave para implementar interatividade e dinamismo, permitindo a navegação para ser mais fluido e responsivo.
+
+•	Na elaboração de planos e modelos, Figma é a ferramenta perfeita para fazer protótipos detalhados, mostrar a aparência final do site e ajudar a equipe a conversar.
+
+•	GitHub, plataforma que hospeda o código-fonte, possibilitando o versionamento, o trabalho colaborativo e a organização eficiente.

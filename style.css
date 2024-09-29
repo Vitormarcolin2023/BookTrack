@@ -17,7 +17,8 @@ body{
   background-color: #2C3E50;
   width: 100%;
   height: 100px;
-  justify-content: start;
+  padding: 20px;
+  border-bottom: 0.1px solid #C5A880;
 }
 
 .botao-cabecalho{
@@ -32,7 +33,97 @@ body{
   margin-left: auto;
 }
 
-.imagem-principal{
-  filter:opacity(70%);
-  width: auto;
+.container-imagem{
+  height: 408px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
+
+.imagem-principal{
+  width: 100%;
+  height: auto;
+  max-height: 408px;
+  filter:opacity(70%);
+  object-fit: cover;
+}
+
+.texto-imagem{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #F5F5DC;
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.botoes-acao-container{
+  display: inline-block;
+  margin-left: 140px;
+  margin-top: 1px;
+}
+
+.botoes-acao{
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  color: #1D1B20;
+  padding: 8px;
+  border-radius: 6px;
+  border: 0.5px solid #C5A880;
+  background-color: #C5A880;
+}
+
+#pesquisar-livro{
+  display: flex;
+  color: #1D1B20;
+  margin-left: 140px;
+  width: 500px;
+  height: 30px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 0.5px solid #C5A880;
+  margin-top: 20px;
+}
+
+.container-filtragem{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 140px;
+  margin-top: 8px;
+}
+
+h4{
+  color: #C5A880;
+}
+
+#filtrar-genero{
+  width: 240px;
+  background-color: #F5F5DC;
+  color: #1D1B20;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+h2{
+  color: #C5A880;
+  margin-left: 140px;
+  margin-top: 50px;
+}
+
+  .carrossel-livros{
+    width: 100%;
+    max-width: 1063px;
+    height: 220px;
+    background-color: rgba(75, 75, 75, 0.6);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+  }
+

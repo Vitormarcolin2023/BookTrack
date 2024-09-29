@@ -7,14 +7,57 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
+    <!--Header é o cabeçalho do site, nele contém a logo e os botões para perfil do usuário e home-->
     <header class="cabecalho">
       <img src="BookTrack_Logo.svg" alt="Logo">
       <div class="botoes-cabecalho">
           <button class="botao-cabecalho"><img src="home.svg" alt="Home"></button>
           <button class="botao-cabecalho"><img src="Perfil-icon.svg" alt="Perfil"></button>
       </div>
-  </header> 
-  <img  class="imagem-principal" src="imagem.paginaInicial.png" alt="Livro" style="width: 100%; height: 408px;">
+    </header> 
+    <!--Essa é a imagem principal que servirá de fundo para mostrar as metas(invés das resenhas)-->
+      <img  class="imagem-principal" src="teste.imagem 1.svg" alt="Livro">
+      <!--Nessa div será inserido as infos de metas que ficarão em cima da imagem-->
+      <div class="texto-imagem">
+        Teste de texto
+        <!-- Aqui serão mostradas as metas -->
+      </div>
+
+      <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
+      <div class="container">
+        <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
+        <div class="container-filtragem">
+          <h4>Filtrar gênero por:</h4>
+          <select id="filtrar-genero">
+            <option value="">Gênero</option>
+            <option value="aventura">Aventura</option>
+            <option value="comedia">Comédia</option>
+            <option value="drama">Drama</option>
+            <option value="distopia">Distopia</option>
+            <option value="fantasia">Fantasia</option>
+            <option value="sciFi">Ficção Científica</option>
+            <option value="romance">Romance</option>
+            <option value="suspense">Suspense</option>
+            <option value="terror">Terror</option>
+          </select>        
+        </div>
+      </div><br>
+
+      <!--Botões para incluir livro e visusalizar metas-->
+      <div class="botoes-acao-container">
+        <button class="botoes-acao" id="botao-incluir">Incluir livro</button>
+        <button class="botoes-acao" style="margin-left: 4px;" id="botao-meta">Metas</button>
+      </div>
+
+      <!--carrossel de lidos recentemente e BookTrash-->
+      <h2>Lidos recentemente</h2>
+      <div class="carrossel-livros">
+
+      </div>
+      <h2>BookTrash</h2>
+      <div class="carrossel-livros">
+
+      </div>
     <!--O Js deixar como a ultima linha do body-->
     <script src="./script.js"></script>
   </body>
