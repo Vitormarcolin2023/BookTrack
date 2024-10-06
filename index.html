@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookTrack</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <meta name="description" content="Organize suas leituras">
   </head>
   <body>
     <!--Header é o cabeçalho do site, nele contém a logo e os botões para perfil do usuário e home-->
@@ -27,7 +28,7 @@
       <div class="container">
         <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
         <div class="container-filtragem">
-          <h4>Filtrar gênero por:</h4>
+          <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
           <select id="filtrar-genero">
             <option value="">Gênero</option>
             <option value="aventura">Aventura</option>
@@ -50,13 +51,13 @@
       </div>
 
       <!--carrossel de lidos recentemente e BookTrash-->
-      <h2>Lidos recentemente</h2>
+      <h2 class="titulo-carrossel">Lidos recentemente</h2>
       <div class="carrossel-livros">
-
+        <!--Divs criadas por JS-->
       </div>
-      <h2>BookTrash</h2>
+      <h2 class="titulo-carrossel">BookTrash</h2>
       <div class="carrossel-livros">
-
+         <!--Divs criadas por JS-->
       </div>
     <!--O Js deixar como a ultima linha do body-->
     <script src="./script.js"></script>
