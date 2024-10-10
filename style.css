@@ -144,6 +144,7 @@ body{
   }
   #pesquisar-livro{
     width: 350px;
+    margin-top: 20px;
   }
   .titulo-carrossel{
     font-size: 18px;
@@ -151,4 +152,15 @@ body{
   .carrossel-livros{
     height: 150px;
   }
+  .logo{
+    width: 180px;
+  }
+  .cabecalho{
+    height: 80px;
+  }
+  .imagem-principal{
+    height: 300px;
+  }
 }
+
+

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+  background-color: #2C2C2D;
+}
+
+.cabecalho{
+  display: flex;   
+  align-items: center;
+  background-color: #2C3E50;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  border-bottom: 0.1px solid #C5A880;
+}
+
+.botao-cabecalho{
+  background-color: transparent;
+  width: 38px;
+  height: 38px;
+  border: 0.4px solid #F5F5DC;
+  margin: 8px;
+}
+
+.botoes-cabecalho{
+  margin-left: auto;
+}
+ 
+ .dados-livro{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+  margin-top: 40px;
+ }
+
+ .livro{
+  height: 279px;
+  width: 187px;
+  border: 0.1px solid #C5A880;
+ }
+
+ .titulo{
+  color: #C5A880;
+  margin-bottom: 8px;
+ }
+
+ .container-input{
+  display: flex;
+  flex-direction: column;
+  
+ }
+
+ .input{
+  width: 400px;
+  border-radius: 6px;
+  height: 25px;
+  border: 0.1px solid #C5A880;
+  margin-bottom: 8px;
+ }
+
+ .input-resenha{
+  width: 400px;
+  height: 150px;
+  border-radius: 6px;
+  border: 0.1px solid #C5A880;
+  text-align: start;
+  margin-bottom: 8px;
+ }
+
+ .selecao{
+  width: 240px;
+  background-color: #F5F5DC;
+  color: #1D1B20;
+  border-radius: 5px;
+  border: 0.1px solid #C5A880;
+  padding: 5px;
+  margin-bottom: 8px;
+  height: 25px;
+ }
+
+ .classificacao{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotateY(180deg);
+  display: flex;
+}
+
+.classificacao input{
+  display: none;
+}
+
+.classificacao label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.classificacao label:before{
+  content: '\f005';
+  font-family: fontAwesome;
+  position: relative;
+  display: block;
+  font-size: 50px;
+  color: rgb(29, 27, 32, 0.6);
+}
+
+.classificacao label:after{
+  content: '\f005';
+  font-family: fontAwesome;
+  position: absolute;
+  display: block;
+  font-size: 50px;
+  color: #C5A880;
+  top: 0;
+  opacity: 0;
+  transition: .5;
+  text-shadow: 0 4px 5px rgba(0, 0, 0, .5);
+}
+.classificacao label:hover:after,
+.classificacao label:hover ~ label:after,
+.classificacao input:checked ~ label:after{
+  opacity: 1;
+}
+
