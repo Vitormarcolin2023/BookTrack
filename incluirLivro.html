@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir livro</title>
+    <link rel="stylesheet" href="./incluirLivro.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="logo" src="BookTrack_Logo.svg" alt="Logo">
+        <div class="botoes-cabecalho">
+            <a href="./index.html"><button class="botao-cabecalho"><img src="home.svg" alt="Home"></button></a>
+            <button class="botao-cabecalho"><img src="Perfil-icon.svg" alt="Perfil"></button>
+        </div>
+    </header> 
+
+
+    <div class="dados-livro">
+        <aside class="imagem-livro">
+            <div class="livro"></div>
+        </aside>
+        <div class="container-input">
+            <h2 class="titulo">Título</h2>
+            <input class="input" type="text" name="titulo" id="titulo-livro">
+            <h2 class="titulo">Autor</h2>
+            <input class="input" type="text" name="autor" id="autor-livro">
+            <h2 class="titulo">Resenha</h2>
+            <input class="input-resenha" type="text" name="resenha" id="resenha-livro" placeholder="Adicione aqui sua resenha">
+        </div>
+        <div class="container-genero">
+            <h2 class="titulo">Selecione o gênero</h2>
+            <select class="selecao">
+                <option value="">Gênero</option>
+                <option value="aventura">Aventura</option>
+                <option value="comedia">Comédia</option>
+                <option value="drama">Drama</option>
+                <option value="distopia">Distopia</option>
+                <option value="fantasia">Fantasia</option>
+                <option value="sciFi">Ficção Científica</option>
+                <option value="romance">Romance</option>
+                <option value="suspense">Suspense</option>
+                <option value="terror">Terror</option>
+            </select>
+            <div class="progresso">
+                <h2 class="titulo">Progresso</h2>
+                <select class="selecao">
+                    <option value="andamento">Em andamento</option>
+                    <option value="concluido">Concluído</option>
+                    <option value="abandonado">Abandonado</option>
+                </select>
+            </div>
+            <h2 class="titulo">Avaliação</h2>
+            <div class="classificacao">
+                <input type="radio" name="star" id="star1"><label for="star1"></label>
+                <input type="radio" name="star" id="star2"><label for="star2"></label>
+                <input type="radio" name="star" id="star3"><label for="star3"></label>
+                <input type="radio" name="star" id="star4"><label for="star4"></label>
+                <input type="radio" name="star" id="star5"><label for="star5"></label>
+            </div>
+        </div>
+    </div>    
+
+</body>
+</html>
