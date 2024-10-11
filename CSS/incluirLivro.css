@@ -27,6 +27,7 @@ body{
   height: 38px;
   border: 0.4px solid #F5F5DC;
   margin: 8px;
+  cursor: pointer;
 }
 
 .botoes-cabecalho{
