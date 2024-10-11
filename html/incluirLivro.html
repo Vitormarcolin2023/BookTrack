@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incluir livro</title>
-    <link rel="stylesheet" href="./incluirLivro.css">
+    <link rel="stylesheet" href="/CSS/incluirLivro.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
     <header class="cabecalho">
-        <img class="logo" src="BookTrack_Logo.svg" alt="Logo">
+        <img class="logo" src="/resources/BookTrack_Logo.svg" alt="Logo">
         <div class="botoes-cabecalho">
-            <a href="./index.html"><button class="botao-cabecalho"><img src="home.svg" alt="Home"></button></a>
-            <button class="botao-cabecalho"><img src="Perfil-icon.svg" alt="Perfil"></button>
+            <a href="../index.html"><button class="botao-cabecalho"><img src="/resources/home.svg" alt="Home"></button></a>
+            <button class="botao-cabecalho"><img src="/resources/Perfil-icon.svg" alt="Perfil"></button>
         </div>
     </header> 
 
@@ -60,8 +60,16 @@
                 <input type="radio" name="star" id="star4"><label for="star4"></label>
                 <input type="radio" name="star" id="star5"><label for="star5"></label>
             </div>
+            <div id="booktrash">
+                <!--Aqui retorna uma mensagem avisando classificação BookTrash-->
+            </div>
         </div>
-    </div>    
+    </div> 
 
+    <div class="container-salvar">
+        <button  class="botao-salvar" type="submit" name="descartar">Descartar</button>
+        <button class="botao-salvar" type="submit" name="salvar">Salvar</button>
+    </div>  
+    
 </body>
 </html>

@@ -88,10 +88,9 @@ body{
 
  .classificacao{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%) rotateY(180deg);
+  transform: rotateY(180deg);
   display: flex;
+  
 }
 
 .classificacao input{
@@ -101,7 +100,7 @@ body{
 .classificacao label{
     display: block;
     cursor: pointer;
-    width: 50px;
+    width: 40px;
 }
 
 .classificacao label:before{
@@ -109,8 +108,8 @@ body{
   font-family: fontAwesome;
   position: relative;
   display: block;
-  font-size: 50px;
-  color: rgb(29, 27, 32, 0.6);
+  font-size: 40px;
+  color: rgb(29, 27, 32, 0.9);
 }
 
 .classificacao label:after{
@@ -118,7 +117,7 @@ body{
   font-family: fontAwesome;
   position: absolute;
   display: block;
-  font-size: 50px;
+  font-size: 40px;
   color: #C5A880;
   top: 0;
   opacity: 0;
@@ -129,5 +128,26 @@ body{
 .classificacao label:hover ~ label:after,
 .classificacao input:checked ~ label:after{
   opacity: 1;
+}
+
+#booktrash{
+  margin-top: 58px;
+}
+
+.container-salvar{
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin-right: 10%;
+  margin-top: auto;
+}
+
+.botao-salvar{
+  background-color: #C5A880;
+  width: 80px;
+  padding: 8px;
+  border: 0.1px solid #C5A880;
+  border-radius: 5px;
+  margin-left: 10px;
 }
 
