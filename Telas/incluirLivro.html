@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="cabecalho">
-        <img class="logo" src="/resource/BookTrack_Logo.svg" alt="Logo">
+        <a href="../index.html"><img class="logo" src="/resource/BookTrack_Logo.svg" alt="Logo"></a>
         <div class="botoes-cabecalho">
             <a href="../index.html"><button class="botao-cabecalho"><img src="/resource/home.svg" alt="Home"></button></a>
             <button class="botao-cabecalho"><img src="/resource/Perfil-icon.svg" alt="Perfil"></button>
@@ -21,6 +21,10 @@
     <div class="dados-livro">
         <aside class="imagem-livro">
             <div class="livro"></div>
+            <div class="container-botao-capa">
+                <button class="botao-capa"><img src="/resource/Icone-pesquisa.svg"></button>
+                <button class="botao-capa"><img src="/resource/Icone-upload.svg"></button>
+            </div>
         </aside>
         <div class="container-input">
             <h2 class="titulo">Título</h2>
@@ -28,7 +32,7 @@
             <h2 class="titulo">Autor</h2>
             <input class="input" type="text" name="autor" id="autor-livro">
             <h2 class="titulo">Resenha</h2>
-            <input class="input-resenha" type="text" name="resenha" id="resenha-livro" placeholder="Adicione aqui sua resenha">
+            <textarea class="input-resenha" type="text" name="resenha" id="resenha-livro" placeholder="Adicione aqui sua resenha"></textarea>
         </div>
         <div class="container-genero">
             <h2 class="titulo">Selecione o gênero</h2>

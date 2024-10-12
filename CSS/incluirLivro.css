@@ -56,7 +56,7 @@ body{
  .container-input{
   display: flex;
   flex-direction: column;
-  
+  color: #1D1B20;
  }
 
  .input{
@@ -69,11 +69,13 @@ body{
 
  .input-resenha{
   width: 400px;
-  height: 150px;
+  height: 160px;
   border-radius: 6px;
   border: 0.1px solid #C5A880;
   text-align: start;
   margin-bottom: 8px;
+  color: #1D1B20;
+  padding: 4px;
  }
 
  .selecao{
@@ -85,13 +87,13 @@ body{
   padding: 5px;
   margin-bottom: 8px;
   height: 25px;
+  cursor: pointer;
  }
 
  .classificacao{
   position: absolute;
   transform: rotateY(180deg);
   display: flex;
-  
 }
 
 .classificacao input{
@@ -150,5 +152,48 @@ body{
   border: 0.1px solid #C5A880;
   border-radius: 5px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
+.container-botao-capa{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+.botao-capa{
+  width: 80px;
+  padding: 4px;
+  border: 0.2px solid #C5A880;
+  background-color: #C5A880;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.botao-capa:hover{
+  background-color: #F5F5DC;
+}
+
+@media (max-width: 1000px) {
+  .dados-livro{
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-direction: column;
+  }
+
+  .livro{
+    height: 199px;
+    width: 150px;
+  }
+
+  .botao-capa{
+    width: 45px;
+  }
+
+  .imagem-livro{
+    width: 28%;
+  }
+}
