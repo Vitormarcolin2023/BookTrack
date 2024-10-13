@@ -45,7 +45,7 @@ body{
   width: 100%;
   height: auto;
   max-height: 408px;
-  filter:opacity(60%);
+  filter:opacity(50%);
   object-fit: cover;
 }
 
@@ -160,7 +160,7 @@ body{
     height: 150px;
   }
   .logo{
-    width: 180px;
+    width: 200px;
   }
   .cabecalho{
     height: 80px;
