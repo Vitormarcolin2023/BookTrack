@@ -1,0 +1,205 @@
+/* Estilos gerais */
+body {
+    font-family: sans-serif;
+    background-color: #2C2C2D;
+  }
+  
+  /* Estilos do modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: #444445;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px; /* Largura máxima ajustada */
+    width: 90%; /* Largura relativa à tela */
+    color: #f5f5dc;
+  }
+  
+  .fechar-modal {
+    position: relative;
+    top: 10px;
+    left: 92%;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  /* Estilos do conteúdo do modal */
+  .conteudo-modal {
+    display: flex;
+    gap: 20px; 
+    margin-bottom: 20px; 
+  }
+  
+  .secao-esquerda {
+    flex: 0 0 180px; /* Largura fixa para a imagem */
+  }
+  
+  .secao-direita {
+    flex: 1; 
+  }
+  
+  /* Estilos do formulário */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f5f5dc; 
+  }
+  
+  textarea {
+    height: 120px;
+  }
+  
+  /* Estilos da capa do livro */
+  .container-imagem {
+    position: relative;
+    width: 150px;
+    height: 225px; 
+    overflow: hidden; 
+    border-radius: 5px;
+  }
+  
+  .capa-livro {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .botao-upload {
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border: none;
+    border-radius: 5px; 
+    padding: 8px 12px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+  }
+  
+  .botao-upload img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Ocultar o input file padrão */
+  #upload-capa {
+    display: none;
+  }
+  
+  /* Estilos das categorias */
+  .categorias {
+    margin-bottom: 20px;
+  }
+  
+  .generos {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .genero {
+    background-color: #c5a880;
+    color: #1D1B20;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .genero.ativo {
+    background-color: #9c7956;
+  }
+  
+  .genero:hover {
+    background-color: #b09070; 
+  }
+  
+  /* Estilos das setas de navegação */
+  .seta {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  /* Estilos da classificação */
+  .classificacao-booktrash {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 20px; 
+  }
+  
+  
+  .estrelas {
+    display: flex;
+  }
+  
+  .estrela {
+    font-size: 1.8em;
+    color: #c5a880;
+    cursor: pointer;
+  }
+  
+  /* Estilos dos botões de ação */
+  .botoes-modal {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; 
+  }
+  
+  .botoes-acao-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; 
+  }
+  
+  .botao-acao {
+    background-color: #c5a880;
+    color: #1D1B20;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .botao-acao:hover {
+    background-color: #b09070; 
+  }
+
