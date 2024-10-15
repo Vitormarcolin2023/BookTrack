@@ -135,32 +135,6 @@ body{
     margin-top: 8px;    
   }
 
-@media (max-width: 1000px) {
-  .container {
-    flex-direction: column;
-  }
-  .titulo-filtragem{
-    font-size: 14px;
-  }
-  #pesquisar-livro{
-    width: 350px;
-    margin-top: 20px;
-  }
-  .titulo-carrossel{
-    font-size: 18px;
-  }
-  .carrossel-livros{
-    height: 150px;
-  }
-  .logo{
-    width: 180px;
-  }
-  .cabecalho{
-    height: 80px;
-  }
-  .imagem-principal{
-    height: 300px;
-  }
-}
+
 
 
