@@ -17,63 +17,75 @@
         </div>
     </header> 
 
-
-    <div class="dados-livro">
-        <aside class="imagem-livro">
-            <div class="livro"></div>
-            <div class="container-botao-capa">
-                <button class="botao-capa"><img src="/resource/Icone-pesquisa.svg"></button>
-                <button class="botao-capa"><img src="/resource/Icone-upload.svg"></button>
+    <form id="form-livro">
+        <div class="dados-livro">
+            <aside class="imagem-livro">
+                <div class="livro">
+                    <img id="preview-imagem" src="" alt="Capa do livro" style="display:none;">
+                </div>
+                <div class="container-botao-capa">
+                    <button type="button" class="botao-capa"><img src="/resource/Icone-pesquisa.svg"></button>
+                    <!--botão de upload-->
+                    <label class="botao-capa">
+                        <img src="/resource/Icone-upload.svg" alt="Ícone de Upload">
+                        <input type="file" id="upload-imagem" accept="image/*" style="display:none;">
+                    </label>
+                </div>
+            </aside>
+            <div class="container-input">
+                <label for="titulo-livro" class="titulo">Título</label>
+                <input class="input" type="text" name="titulo" id="titulo-livro">
+                <label for="autor-livro" class="titulo">Autor</label>
+                <input class="input" type="text" name="autor" id="autor-livro">
+                <label for="resenha-livro" class="titulo">Resenha</label>
+                <textarea class="input-resenha" type="text" name="resenha" id="resenha-livro" placeholder="Adicione aqui sua resenha"></textarea>
             </div>
-        </aside>
-        <div class="container-input">
-            <h2 class="titulo">Título</h2>
-            <input class="input" type="text" name="titulo" id="titulo-livro">
-            <h2 class="titulo">Autor</h2>
-            <input class="input" type="text" name="autor" id="autor-livro">
-            <h2 class="titulo">Resenha</h2>
-            <textarea class="input-resenha" type="text" name="resenha" id="resenha-livro" placeholder="Adicione aqui sua resenha"></textarea>
-        </div>
-        <div class="container-genero">
-            <h2 class="titulo">Selecione o gênero</h2>
-            <select class="selecao">
-                <option value="">Gênero</option>
-                <option value="aventura">Aventura</option>
-                <option value="comedia">Comédia</option>
-                <option value="drama">Drama</option>
-                <option value="distopia">Distopia</option>
-                <option value="fantasia">Fantasia</option>
-                <option value="sciFi">Ficção Científica</option>
-                <option value="romance">Romance</option>
-                <option value="suspense">Suspense</option>
-                <option value="terror">Terror</option>
-            </select>
-            <div class="progresso">
-                <h2 class="titulo">Progresso</h2>
-                <select class="selecao">
-                    <option value="andamento">Em andamento</option>
-                    <option value="concluido">Concluído</option>
-                    <option value="abandonado">Abandonado</option>
+            <div class="container-genero">
+                <label for="genero-livro" class="titulo">Selecione o gênero</label>
+                <select class="selecao" name="genero" id="genero-livro">
+                    <option value="">Gênero</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="distopia">Distopia</option>
+                    <option value="fantasia">Fantasia</option>
+                    <option value="sciFi">Ficção Científica</option>
+                    <option value="romance">Romance</option>
+                    <option value="suspense">Suspense</option>
+                    <option value="terror">Terror</option>
                 </select>
+                <div class="progresso">
+                    <label for="progresso-livro" class="titulo">Progresso</label>
+                    <select class="selecao" name="progresso" id="progresso-livro">
+                        <option value="andamento">Em andamento</option>
+                        <option value="concluido">Concluído</option>
+                        <option value="abandonado">Abandonado</option>
+                    </select>
+                </div>
+                <div>
+                    <h2 class="titulo">Avaliação</h2>
+                    <div class="classificacao">
+                        <!--Os valores estão invertidos por conta do CSS que invertia os valores, agora vai funcionar bem-->
+                        <input type="radio" name="star" id="star1" value="5"><label for="star1"></label>
+                        <input type="radio" name="star" id="star2" value="4"><label for="star2"></label>
+                        <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
+                        <input type="radio" name="star" id="star4" value="2"><label for="star4"></label>
+                        <input type="radio" name="star" id="star5" value="1"><label for="star5"></label>
+                    </div>
+                </div>
+                <div id="booktrash">
+                    <!--Aqui retorna uma mensagem avisando classificação BookTrash-->
+                </div>
             </div>
-            <h2 class="titulo">Avaliação</h2>
-            <div class="classificacao">
-                <input type="radio" name="star" id="star1"><label for="star1"></label>
-                <input type="radio" name="star" id="star2"><label for="star2"></label>
-                <input type="radio" name="star" id="star3"><label for="star3"></label>
-                <input type="radio" name="star" id="star4"><label for="star4"></label>
-                <input type="radio" name="star" id="star5"><label for="star5"></label>
-            </div>
-            <div id="booktrash">
-                <!--Aqui retorna uma mensagem avisando classificação BookTrash-->
-            </div>
-        </div>
-    </div> 
+        </div> 
 
-    <div class="container-salvar">
-        <button  class="botao-salvar" type="submit" name="descartar">Descartar</button>
-        <button class="botao-salvar" type="submit" name="salvar">Salvar</button>
-    </div>  
-    
+        <div class="container-salvar">
+            <button type="button"  class="botao-salvar">Descartar</button>
+            <input type="submit" class="botao-salvar" value="Salvar" id="salvar-livro">
+        </div>  
+    </form>
+
+    <script src="/Js/script.js"></script>
+
 </body>
 </html>
