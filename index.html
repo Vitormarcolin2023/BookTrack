@@ -32,13 +32,15 @@
           <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
           <select id="filtrar-genero">
             <option value="">Gênero</option>
+            <option value="autoAjuda">Auto Ajuda</option>
             <option value="aventura">Aventura</option>
             <option value="comedia">Comédia</option>
             <option value="drama">Drama</option>
             <option value="distopia">Distopia</option>
             <option value="fantasia">Fantasia</option>
-            <option value="sciFi">Ficção Científica</option>
+            <option value="naoFiccao">Não Ficção</option>
             <option value="romance">Romance</option>
+            <option value="sciFi">Ficção Científica</option>
             <option value="suspense">Suspense</option>
             <option value="terror">Terror</option>
           </select>        
@@ -49,15 +51,17 @@
       <div class="botoes-acao-container">
         <a href="/Telas/incluirLivro.html"><button class="botoes-acao" id="botao-incluir">Incluir livro</button></a>
         <button class="botoes-acao" style="margin-left: 4px;" id="botao-meta">Metas</button>
+        <a href="/Telas/telaMeusLivros.html"><button class="botoes-acao" style="margin-left: 4px;" id="botao-livros">Meus Livros</button></a>
+        <a href="/Telas/telaFavoritos.html"><button class="botoes-acao" style="margin-left: 4px;" id="botao-favoritos">Favoritos</button></a>
       </div>
 
       <!--carrossel de lidos recentemente e BookTrash-->
       <h2 class="titulo-carrossel">Lidos recentemente</h2>
-      <div class="carrossel-livros">
+      <div class="carrossel-livros" id="recente">
         <!--Divs criadas por JS-->
       </div>
       <h2 class="titulo-carrossel">BookTrash</h2>
-      <div class="carrossel-livros">
+      <div class="carrossel-livros" id="divBooktrash">
          <!--Divs criadas por JS-->
       </div>
 
