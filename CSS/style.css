@@ -90,8 +90,9 @@ body{
 }
 
 .botoes-acao:hover{
-  background-color: #F5F5DC;
+  background-color: #b09070;
 }
+
 
 #pesquisar-livro{
   display: flex;

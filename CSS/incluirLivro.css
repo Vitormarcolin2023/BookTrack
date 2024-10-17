@@ -45,12 +45,28 @@ body{
  .livro{
   height: 279px;
   width: 187px;
-  border: 0.1px solid #C5A880;
+  border: none;
+  background-color: rgb(29, 27, 32, 0.6);
+ }
+
+ #preview-imagem{
+  display: none;
+  max-width: 187px;
+  width: 100%;
+  height: 279px;
+  object-fit: cover;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+ }
+
+ #upload-imagem{
+  display: none;
  }
 
  .titulo{
   color: #C5A880;
   margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 24px;
  }
 
  .container-input{
@@ -89,6 +105,11 @@ body{
   margin-bottom: 8px;
   height: 25px;
   cursor: pointer;
+ }
+
+ .progresso, .container-genero{
+  display: flex;
+  flex-direction: column;
  }
 
  .classificacao{
@@ -135,7 +156,9 @@ body{
 }
 
 #booktrash{
-  margin-top: 58px;
+  margin-top: 55px;
+  color: #F5F5DC;
+  display: none;
 }
 
 .container-salvar{
@@ -157,6 +180,10 @@ body{
   cursor: pointer;
 }
 
+.botao-salvar:hover{
+  background-color: #b09070;
+}
+
 .container-botao-capa{
   display: flex;
   margin-top: 20px;
@@ -164,6 +191,7 @@ body{
 }
 
 .botao-capa{
+  text-align: center;
   width: 80px;
   padding: 4px;
   border: 0.2px solid #C5A880;
@@ -176,7 +204,7 @@ body{
 }
 
 .botao-capa:hover{
-  background-color: #F5F5DC;
+  background-color: #b09070;
 }
 
 @media (max-width: 1000px) {
@@ -203,8 +231,16 @@ body{
 
   .livro{
     height: 199px;
-    width: 150px;
+    width: 135px;
   }
+
+  #preview-imagem{
+    display: none;
+    max-width: 135px;
+    width: 100%;
+    height: 199px;
+    object-fit: cover;
+   }
 
   .botao-capa{
     width: 45px;
@@ -246,8 +282,16 @@ body{
 
   .livro{
     height: 190px;
-    width: 140px;
+    width: 130px;
   }
+
+  #preview-imagem{
+    display: none;
+    max-width: 130px;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+   }
 
   .botao-capa{
     width: 38px;

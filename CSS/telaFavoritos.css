@@ -1,0 +1,147 @@
+/* Estilo do body */
+body {
+    background-color: #2c2c2d;
+    font-family: "Koh Santepheap", sans-serif;
+  }
+
+  
+  /* Estilo do cabeçalho */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    background-color: #2c3e50;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    border-bottom: 0.1px solid #c5a880;
+    justify-content: space-between; /* Distribui elementos com espaço entre eles */
+  }
+
+  /* Estilo da logo */
+.logo {
+    width: 200px; /* Largura da logo */
+    height: auto; /* Ajusta altura automaticamente */
+  }
+
+  /* Estilos dos botões do cabeçalho */
+.botao-cabecalho {
+    background-color: transparent;
+    width: 38px;
+    height: 38px;
+    border: 0.4px solid #f5f5dc;
+    margin: 8px;
+  }
+
+  .botoes-cabecalho {
+    display: flex; /* Alinha botões horizontalmente */
+  }
+
+  /* Estilo do container principal */
+.container {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    margin: 20px auto; /* Margem superior/inferior e centralizado horizontalmente */
+    width: 80%;
+    max-width: 1200px; /* Largura máxima do container */
+  }
+
+  /* Estilo do título "Meus Livros" */
+h2 {
+    color: #c5a880;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos dos filtros */
+  .filtros {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .select-filtro {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .select-filtro label {
+    color: #c5a880;
+    margin-right: 10px;
+  }
+  
+  #filtro-genero {
+    background-color: #f5f5dc;
+    color: #1d1b20;
+    border-radius: 5px;
+    padding: 8px;
+    border: none; /* Remove a borda padrão */
+  }
+  
+  /* Estilos do container dos livros */
+  .container-livros {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os livros quebrem linha */
+    justify-content: space-between;
+    background-color: #444445;
+    border: 2px solid #444445;
+    gap: 10px 20px; /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
+  }
+  
+  /* Estilos de cada livro */
+  .livro {
+    width: 150px; /* Largura fixa para cada livro */
+    margin-bottom: 20px;
+  }
+  
+  .livro img {
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona sombra à imagem */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+  }
+  
+  @media (max-width: 480px) {
+    .cabecalho {
+      flex-direction: column; /* Coloca logo e botões em coluna */
+      height: auto; /* Ajusta altura do cabeçalho automaticamente */
+      padding: 10px; /* Reduz padding do cabeçalho */
+    }
+  
+    .logo {
+      width: 150px; /* Reduz tamanho da logo */
+      margin-bottom: 10px; /* Adiciona margem abaixo da logo */
+    }
+  
+    .botoes-cabecalho {
+      flex-direction: column; /* Coloca botões em coluna */
+      align-items: center; /* Centraliza botões horizontalmente */
+    }
+  
+    .botao-cabecalho {
+      margin: 5px 0; /* Ajusta margem dos botões */
+    }
+  
+    h2 {
+      font-size: 2em; /* Reduz tamanho do título */
+    }
+  
+    .filtros {
+      justify-content: center; /* Centraliza os filtros */
+      margin-bottom: 10px; /* Reduz margem inferior dos filtros */
+    }
+  
+    .select-filtro {
+      flex-direction: column; /* Coloca label e select em coluna */
+      align-items: flex-start; /* Alinha label e select à esquerda */
+    }
+  
+    .select-filtro label {
+      margin-bottom: 5px; /* Adiciona margem abaixo do label */
+    }
+  
+    .livro {
+      width: 50%; /* Faz com que cada livro ocupe 100% da largura */
+      margin: 10px 0; /* Ajusta margem dos livros */
+    }
+  }

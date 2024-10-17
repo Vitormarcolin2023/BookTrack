@@ -33,6 +33,7 @@
       <!-- Aqui serão mostradas as metas -->
     </div>
 
+<<<<<<< HEAD
     <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
     <div class="container">
       <input
@@ -80,8 +81,50 @@
     <div class="carrossel-livros">
       <!--Divs criadas por JS-->
     </div>
+=======
+      <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
+      <div class="container">
+        <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
+        <div class="container-filtragem">
+          <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
+          <select id="filtrar-genero">
+            <option value="">Gênero</option>
+            <option value="todos">Todos</option>
+            <option value="autoAjuda">Auto Ajuda</option>
+            <option value="aventura">Aventura</option>
+            <option value="comedia">Comédia</option>
+            <option value="drama">Drama</option>
+            <option value="distopia">Distopia</option>
+            <option value="fantasia">Fantasia</option>
+            <option value="naoFiccao">Não Ficção</option>
+            <option value="romance">Romance</option>
+            <option value="sciFi">Ficção Científica</option>
+            <option value="suspense">Suspense</option>
+            <option value="terror">Terror</option>
+          </select>        
+        </div>
+      </div><br>
+
+      <!--Botões para incluir livro e visusalizar metas-->
+      <div class="botoes-acao-container">
+        <a href="/Telas/incluirLivro.html"><button class="botoes-acao" id="botao-incluir">Incluir livro</button></a>
+        <button class="botoes-acao" style="margin-left: 4px;" id="botao-meta">Metas</button>
+        <a href="/Telas/telaMeusLivros.html"><button class="botoes-acao" style="margin-left: 4px;" id="botao-livros">Meus Livros</button></a>
+        <a href="/Telas/telaFavoritos.html"><button class="botoes-acao" style="margin-left: 4px;" id="botao-favoritos">Favoritos</button></a>
+      </div>
+
+      <!--carrossel de lidos recentemente e BookTrash-->
+      <h2 class="titulo-carrossel">Lidos recentemente</h2>
+      <div class="carrossel-livros" id="recente">
+        <!--Divs criadas por JS-->
+      </div>
+      <h2 class="titulo-carrossel">BookTrash</h2>
+      <div class="carrossel-livros" id="divBooktrash">
+         <!--Divs criadas por JS-->
+      </div>
+>>>>>>> 7942f17ca9c2a6d8e7348dc59a2656186d9a25d3
 
     <!--O Js deixar como a ultima linha do body-->
-    <script src="./script.js"></script>
+    <script src="/Js/index.js"></script>
   </body>
 </html>
