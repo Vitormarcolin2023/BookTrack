@@ -157,6 +157,7 @@ body{
 #booktrash{
   margin-top: 55px;
   color: #F5F5DC;
+  display: none;
 }
 
 .container-salvar{

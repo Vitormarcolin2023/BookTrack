@@ -1,10 +1,5 @@
 var livros = JSON.parse(localStorage.getItem("listaLivros")) || [];
 
-document.getElementById("star5").addEventListener("click", function(){
-    var booktrash = document.getElementById("booktrash");
-
-    booktrash.innerHTML = "Livro classificado como <strong>BookTrash<strong>"
-})
 
 document.getElementById("form-livro").addEventListener("submit", function(event) {
     event.preventDefault(); 
@@ -57,3 +52,9 @@ inputImagem.addEventListener('change', function(event) {
         previewImagem.style.display = "block"; 
     }
 });
+
+document.getElementById("descartar").addEventListener("click", function(){
+    document.getElementById("form-livro").reset();
+    previewImagem.src = "";
+        previewImagem.style.display = "none";
+})

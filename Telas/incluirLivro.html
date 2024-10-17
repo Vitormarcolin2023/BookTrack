@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incluir livro</title>
     <link rel="stylesheet" href="/CSS/incluirLivro.css">
+    <!--Possibilita utilizar fontes para criação das estrelas-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+    <!--cabeçalho do site, mesmo que a página inicial-->
     <header class="cabecalho">
         <a href="../index.html"><img class="logo" src="/resource/BookTrack_Logo.svg" alt="Logo"></a>
         <div class="botoes-cabecalho">
@@ -17,29 +19,37 @@
         </div>
     </header> 
 
+    <!--Formulário para preenchimento e armazenamento das informações dos livros-->
     <form id="form-livro">
+        <!--"dados-livro" é uma grande div que contém todas as informações do formulário. Importante para o CSS-->
         <div class="dados-livro">
+            <!--imagem-livro usada para mostrar a capa do livro, fazer upload da imagem ou importa via api(futuramente)-->
             <aside class="imagem-livro">
                 <div class="livro">
                     <img id="preview-imagem" src="" alt="Capa do livro" style="display:none;">
                 </div>
                 <div class="container-botao-capa">
+                    <!--Botão para descartar mudanças-->
                     <button type="button" class="botao-capa"><img src="/resource/Icone-pesquisa.svg"></button>
-                    <!--botão de upload-->
+                    <!--botão de upload de imagem-->
                     <label class="botao-capa">
                         <img src="/resource/Icone-upload.svg" alt="Ícone de Upload">
                         <input type="file" id="upload-imagem" accept="image/*" style="display:none;">
                     </label>
                 </div>
             </aside>
+            <!--Container com os campos de input. Div importante para o css-->
             <div class="container-input">
+                <!--Input de informações do livro como Titulo, autor e resenha-->
                 <label for="titulo-livro" class="titulo">Título</label>
                 <input class="input" type="text" name="titulo" id="titulo-livro">
                 <label for="autor-livro" class="titulo">Autor</label>
                 <input class="input" type="text" name="autor" id="autor-livro">
                 <label for="resenha-livro" class="titulo">Resenha</label>
+                <!--Text area para resenha-->
                 <textarea class="input-resenha" type="text" name="resenha" id="resenha-livro" placeholder="Adicione aqui sua resenha"></textarea>
             </div>
+            <!--Container-genero contém as opções de gênero para seleção-->
             <div class="container-genero">
                 <label for="genero-livro" class="titulo">Selecione o gênero</label>
                 <select class="selecao" name="genero" id="genero-livro">
@@ -54,6 +64,7 @@
                     <option value="suspense">Suspense</option>
                     <option value="terror">Terror</option>
                 </select>
+                <!--progresso contém opções do progresso de leitura para seleção-->
                 <div class="progresso">
                     <label for="progresso-livro" class="titulo">Progresso</label>
                     <select class="selecao" name="progresso" id="progresso-livro">
@@ -63,6 +74,7 @@
                     </select>
                 </div>
                 <div>
+                    <!--Div para criar as estrelas para avaliação-->
                     <h2 class="titulo">Avaliação</h2>
                     <div class="classificacao">
                         <!--Os valores estão invertidos por conta do CSS que invertia os valores, agora vai funcionar bem-->
@@ -74,13 +86,14 @@
                     </div>
                 </div>
                 <div id="booktrash">
-                    <!--Aqui retorna uma mensagem avisando classificação BookTrash-->
+                    Livro classificado como <strong>BookTrash<strong>
                 </div>
             </div>
         </div> 
-
         <div class="container-salvar">
-            <button type="button"  class="botao-salvar">Descartar</button>
+            <!--Descarta as informações cadastradas-->
+            <button type="button"  class="botao-salvar" id="descartar">Descartar</button>
+            <!--Faz o envio das informações e armazena no local storage-->
             <input type="submit" class="botao-salvar" value="Salvar" id="salvar-livro">
         </div>  
     </form>
