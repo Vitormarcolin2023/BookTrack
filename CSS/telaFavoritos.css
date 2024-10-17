@@ -81,7 +81,7 @@ h2 {
   .container-livros {
     display: flex;
     flex-wrap: wrap; /* Permite que os livros quebrem linha */
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #444445;
     border: 2px solid #444445;
     gap: 10px 20px; /* row-gap column gap */
