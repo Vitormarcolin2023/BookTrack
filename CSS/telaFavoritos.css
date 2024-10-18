@@ -141,7 +141,7 @@ h2 {
     }
   
     .livro {
-      width: 100%; /* Faz com que cada livro ocupe 100% da largura */
+      width: 50%; /* Faz com que cada livro ocupe 100% da largura */
       margin: 10px 0; /* Ajusta margem dos livros */
     }
   }
