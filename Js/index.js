@@ -2,13 +2,14 @@ const livros = JSON.parse(localStorage.getItem("listaLivros")); // recupera as i
 var recentes = []; // separa e armazena informações dos recentes
 var trash = []; // separa e armazena informações de BookTrash
 
+
 const divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
 const booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
 
 // função para incluir no array "recentes" os últimos 5 livros adicionados
 function separaRecentes(){
     for(let i = 0; i<5; i++){
-        recentes.push(livros[i].);
+        recentes.push(livros[i]);
     }
     console.log(recentes)
 }
@@ -24,11 +25,11 @@ function separaBookTrash(){
 }
 
 function exibeRecentes(){
-    livros.forEach(livro => {
-        const criaDiv = document.createElement('div');
+    for(let i=0; i<livros.length; i++){
         
-    });
+    }
 }
 
 separaRecentes();
 separaBookTrash();
+console.log(livros[1].titulo);

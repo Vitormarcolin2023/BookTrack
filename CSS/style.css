@@ -143,6 +143,28 @@ body{
     margin-top: 8px;    
   }
 
+  .container-livros{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .info-livro{
+    list-style: none;
+    border: none;
+    background-color: rgb(44, 44, 45, 0.5);
+    width: 140px;
+    height: 210px;
+    box-shadow: 0px 2px 4px rgba(45, 45, 45, 0.5);
+  }
+
+  .seta{
+    background-color: transparent;
+    border: none;
+  }
+
 @media (max-width: 1000px) {
   .container {
     flex-direction: column;
@@ -169,6 +191,26 @@ body{
   .imagem-principal{
     height: 300px;
   }
+  .botoes-acao{
+    width: 85px;
+    font-size: 12px;
+  }
+  .info-livro{
+    width: 100px;
+    height: 140px;
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+  .container-livros .info-livro:nth-last-child(-n+1) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px){
+  .container-livros .info-livro:nth-last-child(-n+2) {
+    display: none;
+  }
+  
 }
 
 
