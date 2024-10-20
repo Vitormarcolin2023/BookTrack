@@ -53,6 +53,20 @@ body{
   align-items: center;
 }
 
+.container-spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+}
+.container-spinner img{
+  position: absolute;
+}
+.container-spinner h1{
+  text-decoration: none;
+  -webkit-text-stroke:unset;
+}
+
 h1{
   color: #FFFFFF;
   font-size: 28px;
