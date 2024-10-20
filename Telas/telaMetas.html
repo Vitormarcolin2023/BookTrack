@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário</title>
+    <title>Metas do Usuário</title>
     <link rel="stylesheet" href="../CSS/styleMetas.css">
 </head>
 <body>
@@ -14,15 +14,37 @@
         <a href="/index.html"><button class="botao-cabecalho"><img src="/resource/home.svg" alt="Home"></button></a>
         <a href="/Telas/perfildousuario.html"><button class="botao-cabecalho"><img src="/resource/Perfil-icon.svg" alt="Perfil"></button></a>
     </div>
-  </header> 
-  <!--Essa é a imagem principal que servirá de fundo para mostrar as metas(invés das resenhas)-->
-    <img  class="imagem-principal" src="/resource/teste.imagem 1.svg" alt="Livro">
-    <!--Nessa div será inserido as infos de metas que ficarão em cima da imagem-->
-    <div class="texto-imagem">
-      <img src="../resource/image.png" alt="Imagem de perfil">
-      <h1>Olá, Maju!</h1>
-      <h2>O que vamos ler hoje?</h2>
-      <!-- Aqui serão mostradas as metas -->
+  </header>
+  <div class="container"> 
+    <div class="meta-de-leitura">
+      <h1>Meta de leitura anual</h1>
+      <img src="/resource/Spinner.png" alt="Spinner">
+      <h2>20 livros concluídos</h2>
+      <button class="botoes"><strong>Alterar meta</strong></button>
     </div>
+    
+    <div class="metas">
+      <h1>Metas</h1>
+      <div class="checkbox-texto">
+          <div class="item">
+              <input type="checkbox" id="checkbox" name="checkbox">
+              <p>Ler a saga TOG</p>
+          </div>
+          <div class="item">
+              <input type="checkbox" id="checkbox2" name="checkbox2">
+              <p>Ler o lançamento da autora X</p>
+          </div>
+          <div class="item">
+              <input type="checkbox" id="checkbox3" name="checkbox3">
+              <p>Reler "Jogos Vorazes"</p>
+          </div>
+      </div>
+    </div>
+  
+    <div class="botoes-menu">
+      <button class="botoes"><strong>Adicionar metas</strong></button>
+      <button class="botoes"><strong>Excluir meta</strong></button>
+    </div>
+  </div>  
 </body>
 </html>
