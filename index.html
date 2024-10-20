@@ -5,81 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookTrack</title>
     <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-    <meta name="description" content="Organize suas leituras" />
+    <meta name="description" content="Organize suas leituras">
   </head>
   <body>
     <!--Header é o cabeçalho do site, nele contém a logo e os botões para perfil do usuário e home-->
     <header class="cabecalho">
-      <img class="logo" src="/resource/BookTrack_Logo.svg" alt="Logo" />
+      <img class="logo" src="/resource/BookTrack_Logo.svg" alt="Logo">
 
       <div class="botoes-cabecalho">
-          <a href="index.html"><button class="botao-cabecalho"><img src="/resource/home.svg" alt="Home"></button></a>
+          <button class="botao-cabecalho"><img src="/resource/home.svg" alt="Home"></button>
           <a href="/Telas/perfildousuario.html"><button class="botao-cabecalho"><img src="/resource/Perfil-icon.svg" alt="Perfil"></button></a>
       </div>
-    </header>
+    </header> 
     <!--Essa é a imagem principal que servirá de fundo para mostrar as metas(invés das resenhas)-->
-    <img
-      class="imagem-principal"
-      src="/resource/teste.imagem 1.svg"
-      alt="Livro"
-    />
-    <!--Nessa div será inserido as infos de metas que ficarão em cima da imagem-->
-    <div class="texto-imagem">
-      Teste de texto
-      <!-- Aqui serão mostradas as metas -->
-    </div>
-
-    <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
-    <div class="container">
-      <input
-        type="search"
-        name="pesquisar-livro"
-        id="pesquisar-livro"
-        placeholder="Pesquisar livro"
-      />
-      <div class="container-filtragem">
-        <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
-        <select id="filtrar-genero">
-          <option value="">Gênero</option>
-          <option value="aventura">Aventura</option>
-          <option value="comedia">Comédia</option>
-          <option value="drama">Drama</option>
-          <option value="distopia">Distopia</option>
-          <option value="fantasia">Fantasia</option>
-          <option value="sciFi">Ficção Científica</option>
-          <option value="romance">Romance</option>
-          <option value="suspense">Suspense</option>
-          <option value="terror">Terror</option>
-        </select>
+    <div class="container-imagem">
+      <!--Nessa div será inserido as infos de metas que ficarão em cima da imagem-->
+      <div class="texto-imagem">
+        Teste de texto
+        <!-- Aqui serão mostradas as metas -->
       </div>
     </div>
-    <br />
 
-    <!--Botões para incluir livro e visusalizar metas-->
-    <div class="botoes-acao-container">
-      <a href="/Telas/incluirLivro.html"
-        ><button class="botoes-acao" id="botao-incluir">
-          Incluir livro
-        </button></a
-      >
-      <a href="/Telas/telaMetas.html">
-        <button class="botoes-acao" style="margin-left: 4px" id="botao-meta">
-          Metas
-        </button>
-      </a>
-    </div>
+      <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
+      <div class="container">
+        <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
+        <div class="container-filtragem">
+          <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
+          <select id="filtrar-genero">
+            <option value="">Gênero</option>
+            <option value="autoAjuda">Auto Ajuda</option>
+            <option value="aventura">Aventura</option>
+            <option value="comedia">Comédia</option>
+            <option value="drama">Drama</option>
+            <option value="distopia">Distopia</option>
+            <option value="fantasia">Fantasia</option>
+            <option value="naoFiccao">Não Ficção</option>
+            <option value="romance">Romance</option>
+            <option value="sciFi">Ficção Científica</option>
+            <option value="suspense">Suspense</option>
+            <option value="terror">Terror</option>
+          </select>        
+        </div>
+      </div><br>
+
+      <!--Botões para incluir livro e visualizar metas-->
+      <div class="botoes-acao-container">
+        <a href="/Telas/incluirLivro.html"><button class="botoes-acao" id="botao-incluir">Incluir livro</button></a>
+        <button class="botoes-acao" style="margin-left: 4px;" id="botao-meta">Metas</button>
+        <a href="/Telas/telaMeusLivros.html"><button class="botoes-acao" style="margin-left: 4px;" id="botao-livros">Meus Livros</button></a>
+        <a href="/Telas/telaFavoritos.html"><button class="botoes-acao" style="margin-left: 4px;" id="botao-favoritos">Favoritos</button></a>
+      </div>
+
 
       <!--carrossel de lidos recentemente e BookTrash-->
       <h2 class="titulo-carrossel">Lidos recentemente</h2>
       <div class="carrossel-livros" id="recente">
-        <!--Divs criadas por JS-->
+        <ul class="container-livros">
+          <li class="info-livro"><img class="imagem-capa" id="capa1" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa2" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa3" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa4" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa5" src="" alt="Imagem da capa" style="display: none;"></li>
+        </ul>
+        <button class="seta"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
       </div>
       <h2 class="titulo-carrossel">BookTrash</h2>
       <div class="carrossel-livros" id="divBooktrash">
-         <!--Divs criadas por JS-->
+        <ul class="container-livros">
+          <li class="info-trash"><img class="imagem-capa" id="trash1" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash2" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash3" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash4" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash5" src="" alt="Imagem da capa" style="display: none;"></li>
+        </ul>
+        <button class="seta"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
+      </div>
       </div>
 
     <!--O Js deixar como a ultima linha do body-->
     <script src="/Js/index.js"></script>
   </body>
 </html>
+
