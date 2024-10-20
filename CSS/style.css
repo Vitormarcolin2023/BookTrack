@@ -210,7 +210,7 @@ body{
   .container-livros .info-livro:nth-last-child(-n+1) {
     display: none;
   }
-  .container-livros .info-trash:nth-last-child(-n+1):nth-last-child(-n+1) {
+  .container-livros .info-trash:nth-last-child(-n+1){
     display: none;
   }
 }
@@ -219,7 +219,7 @@ body{
   .container-livros .info-livro:nth-last-child(-n+2) {
     display: none;
   }
-  .container-livros .info-trash:nth-last-child(-n+1):nth-last-child(-n+1) {
+  .container-livros .info-trash:nth-last-child(-n+2) {
     display: none;
   }
 }
