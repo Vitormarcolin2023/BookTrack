@@ -37,24 +37,20 @@ body{
 .container-imagem{
   height: 408px;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.imagem-principal{
-  width: 100%;
-  height: auto;
-  max-height: 408px;
-  filter:opacity(50%);
-  object-fit: cover;
+  background-image: url(/resource/teste.imagem\ 1.svg); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: opacity(60%);
+  
 }
 
 .texto-imagem{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 408px;
   color: #F5F5DC;
 }
 
@@ -151,13 +147,19 @@ body{
     width: 100%;
   }
 
-  .info-livro{
+  .info-livro, .info-trash{
     list-style: none;
     border: none;
     background-color: rgb(44, 44, 45, 0.5);
     width: 140px;
     height: 210px;
     box-shadow: 0px 2px 4px rgba(45, 45, 45, 0.5);
+  }
+
+  .imagem-capa{
+    width: 140px;
+    height: 210px;
+    object-fit: cover;
   }
 
   .seta{
@@ -188,20 +190,27 @@ body{
   .cabecalho{
     height: 80px;
   }
-  .imagem-principal{
+  .container-imagem{
     height: 300px;
   }
   .botoes-acao{
     width: 85px;
     font-size: 12px;
   }
-  .info-livro{
+  .info-livro, .info-trash{
     width: 100px;
     height: 140px;
     margin-right: 6px;
     margin-left: 6px;
   }
+  .imagem-capa{
+    width: 100px;
+    height: 140px;
+  }
   .container-livros .info-livro:nth-last-child(-n+1) {
+    display: none;
+  }
+  .container-livros .info-trash:nth-last-child(-n+1):nth-last-child(-n+1) {
     display: none;
   }
 }
@@ -210,7 +219,9 @@ body{
   .container-livros .info-livro:nth-last-child(-n+2) {
     display: none;
   }
-  
+  .container-livros .info-trash:nth-last-child(-n+1):nth-last-child(-n+1) {
+    display: none;
+  }
 }
 
 
