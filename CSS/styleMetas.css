@@ -11,6 +11,13 @@ body{
   background-color: #2C2C2D;
 }
 
+.container {
+  display: flex; /* Ativa o Flexbox */
+  justify-content: space-between; /* Distribui o espaço entre as divs */
+  gap: 20px; /* Espaçamento entre as divs */
+  padding: 20px;
+}
+
 .cabecalho{
   display: flex;   
   align-items: center;
@@ -33,104 +40,68 @@ body{
   margin-left: auto;
 }
 
-.container-imagem{
-  height: 408px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+.meta-de-leitura{
+  background-color: rgb(75, 75, 75, 0.5);
+  width: 347px;
+  height: 370px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.imagem-principal{
-  width: 100%;
-  height: auto;
-  max-height: 408px;
-  filter:opacity(60%);
-  object-fit: cover;
+h1{
+  color: #FFFFFF;
+  font-size: 28px;
+  -webkit-text-stroke: #C5A880 1px;
+  margin: 30px;
+  text-decoration: underline 1px;
 }
 
-.texto-imagem{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+h2{
+  background-color: #F5F5DC;
+  width: 275px;
+  border-radius: 200px;
+  margin: 30px;
+}
+
+p{
   color: #F5F5DC;
 }
 
-.container{
+.botoes{
   display: flex;
-  margin-top: 14px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
-}
-
-.botoes-acao-container{
-  display: flex;
-  width: 80%;
-  justify-content: flex-start;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1px;
-}
-
-.botoes-acao{
-  display: flex;
-  width: 120px;
+  width: 150px;
   height: 30px;
   color: #1D1B20;
   padding: 8px;
+  margin:5px;
   border-radius: 6px;
   border: 0.5px solid #C5A880;
   background-color: #C5A880;
   justify-content: center;
 }
 
-#pesquisar-livro{
-  display: flex;
-  color: #1D1B20;
-  width: 500px;
-  height: 30px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 0.5px solid #C5A880;
-  margin-top: 25px;
-}
-
-.container-filtragem{
+.botoes-menu{
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
+  margin: 10px;
 }
 
-.titulo-filtragem{
-  color: #C5A880;
+.checkbox-texto {
+  display: flex;
+  flex-direction: column;
 }
 
-#filtrar-genero{
-  width: 240px;
-  background-color: #F5F5DC;
-  color: #1D1B20;
-  border-radius: 5px;
-  padding: 4px;
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.titulo-carrossel{
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  color: #C5A880;
-  margin-top: 50px;
+.item p {
+  margin-left: 10px;
 }
-
-  .carrossel-livros{
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    height: 220px;
-    background-color: rgba(75, 75, 75, 0.6);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 8px;    
-  }
