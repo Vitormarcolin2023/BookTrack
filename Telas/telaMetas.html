@@ -20,34 +20,39 @@
       <h1>Meta de leitura anual</h1>
       <div class="container-spinner">
         <img src="/resource/Spinner.png" alt="Spinner">
-        <h1>20</h1>
+        <div class="metaAnual" id="metaAnualContainer"></div>
       </div>
       <h2>20 livros concluídos</h2>
-      <button class="botoes"><strong>Alterar meta</strong></button>
+      <button class="botoes" onclick="mostrarPromptMetaAnual()"><strong>Alterar meta</strong></button>
     </div>
     
     <div class="metas">
       <h1>Metas</h1>
-      <div class="checkbox-texto">
-          <div class="item">
-              <input type="checkbox" id="checkbox" name="checkbox">
-              <p>Ler a saga TOG</p>
-          </div>
-          <div class="item">
-              <input type="checkbox" id="checkbox2" name="checkbox2">
-              <p>Ler o lançamento da autora X</p>
-          </div>
-          <div class="item">
-              <input type="checkbox" id="checkbox3" name="checkbox3">
-              <p>Reler "Jogos Vorazes"</p>
-          </div>
-      </div>
+      <div class="listaCheckbox" id="listaCheckbox"></div>
     </div>
   
     <div class="botoes-menu">
-      <button class="botoes"><strong>Adicionar metas</strong></button>
+      <button class="botoes" onclick="mostrarPromptMetas()"><strong>Adicionar meta</strong></button>
       <button class="botoes"><strong>Excluir meta</strong></button>
     </div>
   </div>  
+
+  <div id="promptMeta" class="prompt">
+    <div class="conteudoPrompt">
+        <h1>Digite sua meta aqui:</h1>
+        <input type="text" id="inputPrompt">
+        <button onclick="lerImput()"><strong>Confirmar</strong></button>
+    </div>
+</div>
+
+<div id="modalMetaAnual" class="prompt">
+  <div class="conteudoPrompt">
+      <h1>Digite sua meta anual aqui:</h1>
+      <input type="text" id="inputMetaAnual">
+      <button onclick="lerMetaAnual()"><strong>Confirmar</strong></button>
+  </div>
+</div>
+
+  <script src="/Js/telaMetas.js"></script>
 </body>
 </html>

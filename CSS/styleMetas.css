@@ -34,6 +34,7 @@ body{
   height: 38px;
   border: 0.4px solid #F5F5DC;
   margin: 8px;
+  cursor: pointer;
 }
 
 .botoes-cabecalho{
@@ -58,6 +59,7 @@ body{
   justify-content: center;
   align-items: center;
   width: inherit;
+  height: 100px;
 }
 .container-spinner img{
   position: absolute;
@@ -67,12 +69,18 @@ body{
   -webkit-text-stroke:unset;
 }
 
+.metaAnual{
+  font-size: 40px;
+  color:#F5F5DC;
+  font-weight: bold;
+  -webkit-text-stroke: #C5A880 1px;
+}
+
 h1{
   color: #FFFFFF;
   font-size: 28px;
   -webkit-text-stroke: #C5A880 1px;
-  margin: 30px;
-  text-decoration: underline 1px;
+  margin: 15px;
 }
 
 h2{
@@ -80,10 +88,6 @@ h2{
   width: 275px;
   border-radius: 200px;
   margin: 30px;
-}
-
-p{
-  color: #F5F5DC;
 }
 
 .botoes{
@@ -97,25 +101,90 @@ p{
   border: 0.5px solid #C5A880;
   background-color: #C5A880;
   justify-content: center;
+  cursor: pointer;
 }
 
 .botoes-menu{
   display: flex;
   flex-direction: column;
   margin: 10px;
+  cursor: pointer;
 }
 
-.checkbox-texto {
+.prompt {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudoPrompt {
   display: flex;
+  background-color: #2D2C2C;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  text-align: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.item {
+#inputPrompt {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.conteudoPrompt button {
+  cursor: pointer;
+  display: flex;
+  width: 150px;
+  height: 30px;
+  color: #1D1B20;
+  padding: 8px;
+  margin:15px;
+  border-radius: 6px;
+  border: 0.5px solid #C5A880;
+  background-color: #C5A880;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.listaCheckbox {
+  margin-top: 20px;
+}
+
+.listaCheckbox div {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.item p {
-  margin-left: 10px;
+.listaCheckbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.listaCheckbox label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #F5F5DC;
+}
+
+.listaCheckbox input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+.listaCheckbox input[type="checkbox"]:checked {
+  accent-color: #2d2d2d;
 }
