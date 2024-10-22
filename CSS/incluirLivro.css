@@ -62,6 +62,46 @@ body{
   display: none;
  }
 
+ .pesquisaAPI{
+  display: none;
+  width: 500px;
+  height: 200px;
+  border: 0.2px solid #1D1B20;
+  position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2C2C2D;
+  align-self: center;
+  align-items: center;
+  top: 30%;
+  left: 30%;
+ }
+
+ .botao-fechar{
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 0.1px solid #1D1B20;
+  margin-bottom: auto;
+  margin-left: auto;
+  cursor: pointer;
+ }
+
+ .botao-pesquisa{
+  width: 150px;
+  height: 23px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  background-color: #C5A880;
+  border: 0.1px solid #b09070;
+  border-radius: 5px;
+  color: #1D1B20;
+  font-weight: bold;
+  cursor: pointer;
+ }
+
  .titulo{
   color: #C5A880;
   margin-bottom: 8px;
@@ -114,6 +154,7 @@ body{
 
  .classificacao{
   position: absolute;
+  z-index: 0;
   transform: rotateY(180deg);
   display: flex;
 }

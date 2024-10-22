@@ -30,7 +30,7 @@
                 </div>
                 <div class="container-botao-capa">
                     <!--Botão para descartar mudanças-->
-                    <button type="button" class="botao-capa"><img src="/resource/Icone-pesquisa.svg"></button>
+                    <button type="button" class="botao-capa" id="botaoAPI"><img src="/resource/Icone-pesquisa.svg"></button>
                     <!--botão de upload de imagem-->
                     <label class="botao-capa">
                         <img src="/resource/Icone-upload.svg" alt="Ícone de Upload">
@@ -54,17 +54,17 @@
                 <label for="genero-livro" class="titulo">Selecione o gênero</label>
                 <select class="selecao" name="genero" id="genero-livro">
                     <option value="">Gênero</option>
-                <option value="autoAjuda">Auto Ajuda</option>
-                <option value="aventura">Aventura</option>
-                <option value="comedia">Comédia</option>
-                <option value="drama">Drama</option>
-                <option value="distopia">Distopia</option>
-                <option value="fantasia">Fantasia</option>
-                <option value="naoFiccao">Não Ficção</option>
-                <option value="romance">Romance</option>
-                <option value="sciFi">Ficção Científica</option>
-                <option value="suspense">Suspense</option>
-                <option value="terror">Terror</option>
+                    <option value="autoAjuda">Auto Ajuda</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="distopia">Distopia</option>
+                    <option value="fantasia">Fantasia</option>
+                    <option value="naoFiccao">Não Ficção</option>
+                    <option value="romance">Romance</option>
+                    <option value="sciFi">Ficção Científica</option>
+                    <option value="suspense">Suspense</option>
+                    <option value="terror">Terror</option>
                 </select>
                 <!--progresso contém opções do progresso de leitura para seleção-->
                 <div class="progresso">
@@ -99,6 +99,12 @@
             <input type="submit" class="botao-salvar" value="Salvar" id="salvar-livro">
         </div>  
     </form>
+    <div class="pesquisaAPI" id="pesquisaAPI">
+        <button class="botao-fechar" id="fechar"><img src="../resource/close-icon.svg"></button>
+        <label class="titulo">Informe o título do livro:</label>
+        <input class="input" type="text" name="pesquisa" id="titulo-api">
+        <button class="botao-pesquisa" id="pesquisarLivro">Encontrar livro</button>
+    </div>
 
     <script src="/Js/script.js"></script>
 

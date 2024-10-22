@@ -1,4 +1,4 @@
-const livros = JSON.parse(localStorage.getItem("listaLivros")); // recupera as infos em local storage
+var livros = JSON.parse(localStorage.getItem("listaLivros")) || []; // recupera as infos em local storage
 var recentes = []; // separa e armazena informações dos recentes
 var trash = []; // separa e armazena informações de BookTrash
 
@@ -14,18 +14,13 @@ function separaRecentes(){
 }
 
 //função para incluir no array "trash" os livros classificados com 1 estrela. Igual a função de separaRecentes
-function separaBookTrash(){
+/*function separaBookTrash(livros){
     for(let i = livros.length-1; i>=livros.length-5; i--){
         if(livros[i].avaliacao == 1){
-            trash.push(livros[i])
+            trash.push(livros[i]);
         }
     }
-    console.log(trash)
-}
-
-
-separaRecentes();
-separaBookTrash();
+}*/
 
 // função para mostrar lidos recentemente
 function mostrarRecentes(){
@@ -72,5 +67,8 @@ function mostrarTrash(){
         }
     }
 }
+
+separaRecentes();
+//separaBookTrash(livros);
 mostrarRecentes();
 mostrarTrash();
