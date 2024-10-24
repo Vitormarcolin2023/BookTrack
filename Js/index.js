@@ -5,6 +5,11 @@ var trash = []; // separa e armazena informações de BookTrash
 const divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
 const booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
 
+window.onload = function() {
+    mostrarRecentes(recentes);
+    mostrarTrash(trash);
+};
+
 console.log(livros[1].avaliacao);
 
 // função para incluir no array "recentes" os últimos 5 livros adicionados
