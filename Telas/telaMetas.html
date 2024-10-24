@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../CSS/styleMetas.css">
 </head>
 <body>
-   <!--Header é o cabeçalho do site, nele contém a logo e os botões para perfil do usuário e home-->
    <header class="cabecalho">
     <img class="logo" src="../resource/BookTrack_Logo.svg" alt="Logo">
     <div class="botoes-cabecalho">
@@ -33,14 +32,14 @@
   
     <div class="botoes-menu">
       <button class="botoes" onclick="mostrarPromptMetas()"><strong>Adicionar meta</strong></button>
-      <button class="botoes"><strong>Excluir meta</strong></button>
+      <button class="botoes" onclick="mostrarPromptExcluirMetas()"><strong>Excluir meta</strong></button>
     </div>
   </div>  
 
   <div id="promptMeta" class="prompt">
     <div class="conteudoPrompt">
         <h1>Digite sua meta aqui:</h1>
-        <input type="text" id="inputPrompt">
+        <textarea id="inputPrompt"></textarea>
         <button onclick="lerImput()"><strong>Confirmar</strong></button>
     </div>
 </div>
@@ -48,8 +47,16 @@
 <div id="modalMetaAnual" class="prompt">
   <div class="conteudoPrompt">
       <h1>Digite sua meta anual aqui:</h1>
-      <input type="text" id="inputMetaAnual">
+      <textarea id="inputMetaAnual"></textarea>
       <button onclick="lerMetaAnual()"><strong>Confirmar</strong></button>
+  </div>
+</div>
+
+<div id="modalExcluirMeta" class="prompt">
+  <div class="conteudoPrompt">
+      <h1>Quais metas você deseja excluir?</h1>
+      <div class="listaCheckbox" id="inputExcluirMeta"></div>
+      <button onclick="lerExcluirMeta()"><strong>Confirmar</strong></button>
   </div>
 </div>
 
