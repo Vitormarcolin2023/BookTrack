@@ -18,20 +18,15 @@ function separaRecentes(){
 //função para incluir no array "trash" os livros classificados com 1 estrela. Igual a função de separaRecentes
 function separaBookTrash(){
     for(let i = livros.length-1; i>=livros.length-5; i--){
-<<<<<<< Updated upstream
         if(livros[i].avaliacao == 1){
             trash.push(livros[i]);
         }
-=======
-        //if(livros[i].avaliacao == 1){
-            trash.push(livros[i])
-        //}
->>>>>>> Stashed changes
+
     }
 }
 
 // função para mostrar lidos recentemente
-function mostrarRecentes(){
+function mostrarRecentes(lista){
     // array para armazenar os IDs das divs para apresentar livros
    let imagensRecentes = [
     document.getElementById("capa1"),
@@ -42,10 +37,10 @@ function mostrarRecentes(){
    ];
 
    // laço for para percorrer o array de recentes e apresentar para o usuário
-   for(let i=0; i<recentes.length; i++){
+   for(let i=0; i<lista.length; i++){
 
-        if(recentes[i]){ // verifica se a posição possui informação
-            imagensRecentes[i].src = recentes[i].capa; // acessa src da img que está no indice e manda a capa para ela
+        if(lista[i]){ // verifica se a posição possui informação
+            imagensRecentes[i].src = lista[i].capa; // acessa src da img que está no indice e manda a capa para ela
             imagensRecentes[i].style.display = "block"; // torna visivel
         }
         else{
@@ -76,19 +71,24 @@ function mostrarTrash(){
     }
 }
 
-var genero = document.getElementById("genero-livro").value;
+separaRecentes();
+separaBookTrash();
+mostrarRecentes(recentes);
+mostrarTrash();
 
-function filtrarGenero(genero){
+
+var arrayGenero = [];
+
+document.getElementById("filtrar-genero").addEventListener("click", function (){
+    var genero = document.getElementById("filtrar-genero").value;
     for (let i=0; i<livros.length; i++){
         if(livros[i].genero === genero){
-            //mostrarRecentes();
+            arrayGenero.push(livros[i])
+            mostrarRecentes(arrayGenero);
             //mostrarTrash();
         }
     }
-}
+})
 
 
-separaRecentes();
-separaBookTrash();
-mostrarRecentes();
-mostrarTrash();
+
