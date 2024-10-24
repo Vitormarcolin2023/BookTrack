@@ -5,6 +5,8 @@ var trash = []; // separa e armazena informações de BookTrash
 const divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
 const booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
 
+console.log(livros[1].avaliacao);
+
 // função para incluir no array "recentes" os últimos 5 livros adicionados
 function separaRecentes(){
     for(let i = livros.length-1; i>=livros.length-5; i--){ // começa do último livro incluso e para com 5
@@ -14,13 +16,13 @@ function separaRecentes(){
 }
 
 //função para incluir no array "trash" os livros classificados com 1 estrela. Igual a função de separaRecentes
-/*function separaBookTrash(livros){
+function separaBookTrash(){
     for(let i = livros.length-1; i>=livros.length-5; i--){
         if(livros[i].avaliacao == 1){
             trash.push(livros[i]);
         }
     }
-}*/
+}
 
 // função para mostrar lidos recentemente
 function mostrarRecentes(){
@@ -68,7 +70,19 @@ function mostrarTrash(){
     }
 }
 
+var genero = document.getElementById("genero-livro").value;
+
+function filtrarGenero(genero){
+    for (let i=0; i<livros.length; i++){
+        if(livros[i].genero === genero){
+            //mostrarRecentes();
+            //mostrarTrash();
+        }
+    }
+}
+
+
 separaRecentes();
-//separaBookTrash(livros);
+separaBookTrash();
 mostrarRecentes();
 mostrarTrash();

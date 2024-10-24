@@ -3,7 +3,8 @@ var livros = JSON.parse(localStorage.getItem("listaLivros")) || []; // carrega o
 const popupAPI = document.getElementById("pesquisaAPI"); // armazena o container do pop-up
 
 // clicando no botão fechar define o container como display none
-document.getElementById("fechar").addEventListener("click", function(){
+document.getElementById("fechar").addEventListener("click", function(event){
+    event.preventDefault()
     popupAPI.style.display = "none";
 })
 
