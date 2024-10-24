@@ -18,9 +18,15 @@ function separaRecentes(){
 //função para incluir no array "trash" os livros classificados com 1 estrela. Igual a função de separaRecentes
 function separaBookTrash(){
     for(let i = livros.length-1; i>=livros.length-5; i--){
+<<<<<<< Updated upstream
         if(livros[i].avaliacao == 1){
             trash.push(livros[i]);
         }
+=======
+        //if(livros[i].avaliacao == 1){
+            trash.push(livros[i])
+        //}
+>>>>>>> Stashed changes
     }
 }
 
