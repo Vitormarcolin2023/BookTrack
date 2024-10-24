@@ -35,7 +35,7 @@ body{
 
 .texto-imagem {
   position: relative; /* Importante para o posicionamento da pseudo-classe */
-  background-image: url(/resource/teste.imagem\ 1.svg);
+  background-image: url(/resource/1.jpg);
   background-size: cover;
   width: 100%;
   height: 350px;

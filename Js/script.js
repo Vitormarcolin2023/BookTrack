@@ -1,8 +1,21 @@
 var livros = JSON.parse(localStorage.getItem("listaLivros")) || []; // carrega ou cria um array com as informações salvas no local Storage
 
+const popupAPI = document.getElementById("pesquisaAPI"); // armazena o container do pop-up
+
+// clicando no botão fechar define o container como display none
+document.getElementById("fechar").addEventListener("click", function(event){
+    event.preventDefault()
+    popupAPI.style.display = "none";
+})
+
+// abre o pop up
+document.getElementById("botaoAPI").addEventListener("click", function(){
+    popupAPI.style.display = "flex";
+})
+
 // Função ocorre quando o formulário com as informações do livro é enviado
 document.getElementById("form-livro").addEventListener("submit", function(event) {
-    event.preventDefault(); // impede que o formulário seja enviado antes de salvar as informações4
+    event.preventDefault(); // impede que o formulário seja enviado antes de salvar as informações
     // constantes para armazenar as informações cadastradas
     const titulo = document.getElementById("titulo-livro").value; 
     const autor = document.getElementById("autor-livro").value;
@@ -15,21 +28,22 @@ document.getElementById("form-livro").addEventListener("submit", function(event)
 
     let livro; // variável para criar novo objeto
 
-    if (titulo && autor && genero && progresso && avaliacao && capa) { // verifica se todos os campos forão preenchidos
         // chama a função novoLivro para criar novo objeto e armazena os valores em livro
         livro = new novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa); 
 
-        livros.push(livro) // adiciona as informações do objeto no array livros
-        localStorage.setItem('listaLivros', JSON.stringify(livros)); // adiciona as informações de livros no localStorage
+        if(titulo && autor && resenha && genero && progresso && avaliacao && capa){
+            livros.push(livro) // adiciona as informações do objeto no array livros
+            localStorage.setItem('listaLivros', JSON.stringify(livros)); // adiciona as informações de livros no localStorage
 
-        alert("Livro salvo com sucesso!"); // envia um aviso para o usuário
+            alert("Livro salvo com sucesso!"); // envia um aviso para o usuário
+        }
+        else{
+            alert("Por favor, preencha todos os campos.")
+        }
 
         document.getElementById("form-livro").reset(); // reseta as informações preenchidas
         previewImagem.src = ""; // limpa o campo da imagem
         previewImagem.style.display = "none"; // esconde o display da imagem
-    } else { // caso todos os campos não forem preenchidos
-        alert("Por favor, preencha todos os campos.");
-    }
 
 })
 
@@ -71,4 +85,5 @@ document.getElementById("descartar").addEventListener("click", function(){
     previewImagem.src = "";
         previewImagem.style.display = "none";
 })
+
 
