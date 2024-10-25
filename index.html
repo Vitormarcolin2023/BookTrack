@@ -28,11 +28,21 @@
 
       <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
       <div class="container">
-        <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
+        <form>
+          <div class="input-pesquisa">
+            <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
+            <img src="/resource/Icone-pesquisa.svg" alt="icone de pesquisa" class="icone-pesquisar-livro">
+          </div>
+        </form>
+        <div class="container-resultado">
+          <ul id="resultado">
+             
+          </ul>
+        </div>
         <div class="container-filtragem">
           <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
           <select id="filtrar-genero">
-            <option value="">Gênero</option>
+            <option value="">Todos</option>
             <option value="autoAjuda">Auto Ajuda</option>
             <option value="aventura">Aventura</option>
             <option value="comedia">Comédia</option>

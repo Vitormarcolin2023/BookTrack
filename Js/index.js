@@ -89,8 +89,6 @@ function mostrarTrash(listaT){
 
 separaRecentes();
 separaBookTrash();
-mostrarRecentes(recentes);
-mostrarTrash(trash);
 
 // Função para filtrar gêneros
 document.getElementById("filtrar-genero").addEventListener("click", function (){
@@ -108,7 +106,7 @@ document.getElementById("filtrar-genero").addEventListener("click", function (){
                 arrayTrash.push(livros[i]);
             }
         }
-        // caso o valor da seleção for vazia, ou seja, a opção "Gênero"
+        // caso o valor da seleção for vazia, ou seja, a opção "Todos"
         else if (genero === ""){
             arrayGenero = recentes;
             arrayTrash = trash;
@@ -117,6 +115,32 @@ document.getElementById("filtrar-genero").addEventListener("click", function (){
     mostrarRecentes(arrayGenero);
     mostrarTrash(arrayTrash);
 })
+
+// testes
+document.getElementById("pesquisar-livro").addEventListener("input", function(){
+    let valor = e.target.value;
+
+    if(valor && valor.trim().length > 0){
+        valor = valor.trim().toLowerCase();
+        //buscaResultado(valor);
+    }
+})
+
+// Testes
+function buscaResultado(valor){
+    
+    for (const person of results){
+        const resultado = document.createElement('li')
+
+        resultado.classList.add('resultado-busca')
+
+        const text = document.createTextNode(livros.titulo);
+
+        resultado.appendChild(text)
+
+        list.appendChild(resultItem)
+    }
+}
 
 
 

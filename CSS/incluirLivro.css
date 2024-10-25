@@ -230,6 +230,7 @@ body{
   border-radius: 5px;
   margin-left: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .botao-salvar:hover{

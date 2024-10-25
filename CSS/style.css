@@ -83,6 +83,7 @@ body{
   background-color: #C5A880;
   justify-content: center;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .botoes-acao:hover{
@@ -90,15 +91,27 @@ body{
 }
 
 
-#pesquisar-livro{
+.input-pesquisa{
+  background-color: #F5F5DC;
   display: flex;
   color: #1D1B20;
   width: 500px;
-  height: 30px;
-  padding: 8px;
+  padding: 3px;
   border-radius: 6px;
   border: 0.5px solid #C5A880;
   margin-top: 25px;
+}
+
+#pesquisar-livro{
+  background-color: transparent;
+  border: none;
+  height: 23px;
+  width: 500px;
+
+}
+
+.icone-pesquisar-livro{
+  height: 23px;
 }
 
 .container-filtragem{
@@ -174,7 +187,7 @@ body{
   .titulo-filtragem{
     font-size: 14px;
   }
-  #pesquisar-livro{
+  .input-pesquisa{
     width: 350px;
     margin-top: 20px;
   }
@@ -195,7 +208,7 @@ body{
   }
   .botoes-acao{
     width: 85px;
-    font-size: 12px;
+    font-size: 11px;
   }
   .info-livro, .info-trash{
     width: 100px;
