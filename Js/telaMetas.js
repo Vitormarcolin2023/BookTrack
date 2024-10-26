@@ -57,10 +57,8 @@ function obterMetaAnualDoLocalStorage() {
 function lerMetaAnual() {
     var metaAnual = document.getElementById("inputMetaAnual").value;
 
-    if (metaAnual) {
-        document.getElementById("metaAnualContainer").innerText = metaAnual;
-        salvarMetaAnualNoLocalStorage(metaAnual);
-    }
+    salvarMetaAnualNoLocalStorage(metaAnual);
+    carregarMetaAnual();
 
     document.getElementById("inputMetaAnual").value = "";
     document.getElementById("modalMetaAnual").style.display = "none";
@@ -68,9 +66,11 @@ function lerMetaAnual() {
 
 function carregarMetaAnual() {
     var metaAnual = obterMetaAnualDoLocalStorage();
-    
+    var listaLivros = obterStatusDeLeitura();
+    var livrosConcluidos = listaLivros.filter(livro => livro.progresso === "concluido").length;
+
     if (metaAnual) {
-        document.getElementById("metaAnualContainer").innerText = metaAnual;
+        desenharCirculoProgresso(metaAnual, livrosConcluidos);
     }
 }
 
@@ -163,4 +163,28 @@ function lerStatusDeLeitura() {
     });
 
     statusElemento.innerHTML = "Livros concluídos: " + livrosConcluidos;
+}
+
+function desenharCirculoProgresso(metaAnual, livrosConcluidos) {
+    const canvas = document.getElementById("progressCircle");
+    const ctx = canvas.getContext("2d");
+
+    const radius = 50;
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const progresso = Math.min(livrosConcluidos / metaAnual, 1);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, -0.5 * Math.PI, (2 * Math.PI * progresso) - 0.5 * Math.PI);
+    ctx.lineWidth = 15;
+    ctx.strokeStyle = "#C5A880";
+    ctx.stroke();
+
+    ctx.fillStyle = "#C5A880";
+    ctx.font = "45px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(metaAnual, centerX, centerY);
 }

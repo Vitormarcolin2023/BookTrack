@@ -42,7 +42,7 @@ body{
 }
 
 .meta-de-leitura{
-  background-color: rgb(75, 75, 75, 0.5);
+  background-color: #4b4b4b80;
   width: 347px;
   height: 370px;
   text-align: center;
@@ -61,13 +61,6 @@ body{
   width: inherit;
   height: 100px;
 }
-.container-spinner img{
-  position: absolute;
-}
-.container-spinner h1{
-  text-decoration: none;
-  -webkit-text-stroke:unset;
-}
 
 .metaAnual{
   font-size: 40px;
@@ -80,7 +73,7 @@ h1{
   color: #FFFFFF;
   font-size: 28px;
   -webkit-text-stroke: #C5A880 1px;
-  margin: 15px;
+  margin: 30px;
 }
 
 #statusLivro{
@@ -89,7 +82,7 @@ h1{
   font-weight: bold;
   padding: 7px;
   border-radius: 200px;
-  margin: 30px;
+  margin: 20px;
 }
 
 .botoes{
