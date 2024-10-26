@@ -192,11 +192,16 @@ h1{
     width: 140px;
     height: 210px;
     object-fit: cover;
+    cursor: pointer;
   }
 
   .seta{
+    display: none;
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    height: 35px;
+    align-self: center;
   }
 
 @media (max-width: 1000px) {

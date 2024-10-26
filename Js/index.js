@@ -2,33 +2,37 @@ var livros = JSON.parse(localStorage.getItem("listaLivros")) || []; // recupera 
 var recentes = []; // separa e armazena informações dos recentes
 var trash = []; // separa e armazena informações de BookTrash
 
-const divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
-const booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
+var divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
+var booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
 
-window.onload = function() {
-    mostrarRecentes(recentes);
-    mostrarTrash(trash);
-};
+separaRecentes();
+separaBookTrash();
 
-console.log(livros[1].avaliacao);
 
-// função para incluir no array "recentes" os últimos 5 livros adicionados
+// função para incluir no array "recentes" os últimos 10 livros adicionados
 function separaRecentes(){
-    for(let i = livros.length-1; i>=livros.length-5; i--){ // começa do último livro incluso e para com 5
+    for(let i = livros.length-1; i>=livros.length-10; i--){ // começa do último livro incluso e para com 10
         recentes.push(livros[i]); // inclui no array recentes
     }
     console.log(recentes) // teste :)
 }
 
-//função para incluir no array "trash" os livros classificados com 1 estrela. Igual a função de separaRecentes
-function separaBookTrash(){
-    for(let i = livros.length-1; i>=livros.length-5; i--){
-        if(livros[i].avaliacao == 1){
-            trash.push(livros[i]);
-        }
 
+
+//função para incluir no array "trash" os livros classificados com 1 estrela. Cria um array com tamanho da quantidade de livros com 1 estrela.
+function separaBookTrash(){
+    for(let i = 0; i<livros.length; i++){
+        if(livros[i].avaliacao == 1){
+            trash.unshift(livros[i]); // adiciona no inicio do array
+        }
     }
+    console.log(trash);
 }
+
+window.onload = function() {
+    mostrarRecentes(recentes);
+    mostrarTrash(trash);
+};
 
 // função para mostrar lidos recentemente
 function mostrarRecentes(lista){
@@ -42,24 +46,23 @@ function mostrarRecentes(lista){
    ];
 
    // Limpa as informações exibidas para receber novo array sem sobrescrever informações
-   for(let i=0; i<imagensRecentes.length; i++){
+   for(let i=0; i<5; i++){
         imagensRecentes[i].src = "";
         imagensRecentes[i].style.display = "none";
    }
 
    // laço for para percorrer o array de recentes e apresentar para o usuário
-   for(let i=0; i<lista.length; i++){
+   for(let i=0; i<5; i++){
 
         if(lista[i]){ // verifica se a posição possui informação
             imagensRecentes[i].src = lista[i].capa; // acessa src da img que está no indice e manda a capa para ela
             imagensRecentes[i].style.display = "block"; // torna visivel
         }
-        else{
-            imagensRecentes[i].style.display = "none"; // mantém escondido caso esteja vazia a posição
-        }
    }
     
 }
+
+
 // Igual a função de mostrarRecentes
 function mostrarTrash(listaT){
     let imagensTrash = [
@@ -70,7 +73,7 @@ function mostrarTrash(listaT){
         document.getElementById("trash5")
     ]
 
-    for(let i=0; i<imagensTrash.length; i++){
+    for(let i=0; i<5; i++){
         imagensTrash[i].src = "";
         imagensTrash[i].style.display = "none";
    }
@@ -79,7 +82,7 @@ function mostrarTrash(listaT){
 
         if(listaT[i]){
             imagensTrash[i].src = listaT[i].capa;
-            imagensTrash[i].style.display = "block";
+            imagensTrash[i].style.display= "block";
         }
         else{
             imagensTrash[i].style.display = "none";
@@ -87,8 +90,7 @@ function mostrarTrash(listaT){
     }
 }
 
-separaRecentes();
-separaBookTrash();
+
 
 // Função para filtrar gêneros
 document.getElementById("filtrar-genero").addEventListener("click", function (){
@@ -116,31 +118,53 @@ document.getElementById("filtrar-genero").addEventListener("click", function (){
     mostrarTrash(arrayTrash);
 })
 
-// testes
-document.getElementById("pesquisar-livro").addEventListener("input", function(){
-    let valor = e.target.value;
 
-    if(valor && valor.trim().length > 0){
-        valor = valor.trim().toLowerCase();
-        //buscaResultado(valor);
-    }
+// Constantes para guardar ids das setas no carrossel de livros
+const setaDireita = document.getElementById("seta-direita");
+const setaEsquerda = document.getElementById("seta-esquerda");
+const setaDireitaTrash = document.getElementById("seta-direita-trash");
+const setaEsquerdaTrash = document.getElementById("seta-esquerda-trash");
+
+// Por definição, todas as setas são escondidas. Esse bloco verifica se o array recentes e trash possuem mais de 5, assim torna visivel
+if(recentes.length > 5){
+    setaDireita.style.display = "block";
+}
+
+if(trash.length > 5){
+    setaDireitaTrash.style.display = "block";
+}
+
+// Controla aparição e sumiço de setas e livros a serem mostrados
+setaDireita.addEventListener("click", function(){
+    setaEsquerda.style.display = "block";
+    setaDireita.style.display = "none";
+   mostrarRecentes(recentes.slice(5, 9)); // passa como parâmetro um pedaço do array recentes, apenas as informações dos últimos 5
 })
 
-// Testes
-function buscaResultado(valor){
-    
-    for (const person of results){
-        const resultado = document.createElement('li')
+setaEsquerda.addEventListener("click", function(){
+    setaEsquerda.style.display = "none";
+    setaDireita.style.display = "block";
+    mostrarRecentes(recentes.slice(0,5)); // as informações dos 5 primeiros
+})
 
-        resultado.classList.add('resultado-busca')
+setaDireitaTrash.addEventListener("click", function(){
+    setaEsquerdaTrash.style.display = "block";
+    setaDireitaTrash.style.display = "none";
+   mostrarTrash(trash.slice(5, 9)); // informações dos últimos 5
+})
 
-        const text = document.createTextNode(livros.titulo);
+setaEsquerdaTrash.addEventListener("click", function(){
+    setaEsquerdaTrash.style.display = "none";
+    setaDireitaTrash.style.display = "block";
+    mostrarTrash(trash.slice(0,5)); // as informações dos 5 primeiros
+})
 
-        resultado.appendChild(text)
 
-        list.appendChild(resultItem)
-    }
-}
+// testes
+document.getElementById("pesquisar-livro").addEventListener("input", function(){
+   
+})
+
 
 
 
