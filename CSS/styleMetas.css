@@ -83,9 +83,11 @@ h1{
   margin: 15px;
 }
 
-h2{
+#statusLivro{
   background-color: #F5F5DC;
-  width: 275px;
+  width: 200px;
+  font-weight: bold;
+  padding: 7px;
   border-radius: 200px;
   margin: 30px;
 }

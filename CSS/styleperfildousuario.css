@@ -11,6 +11,13 @@ body{
   background-color: #2C2C2D;
 }
 
+nav{
+display: flex;
+justify-content:baseline;
+align-items: center;
+flex-direction: row;
+}
+
 .cabecalho{
   display: flex;   
   align-items: center;
@@ -35,7 +42,7 @@ body{
 }
 
 .texto-imagem {
-  position: relative; /* Importante para o posicionamento da pseudo-classe */
+  position: relative;
   background-image: url(/resource/1.jpg);
   background-size: cover;
   width: 100%;
@@ -54,15 +61,14 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(75, 75, 75, 0.6); /* Ajuste a cor e opacidade conforme necessário */
-  z-index: 1; /* Coloca a camada de fundo atrás do conteúdo */
+  background-color: rgb(75, 75, 75, 0.6);
+  z-index: 1;
 }
 
 .texto-imagem * {
   position: relative;
-  z-index: 2; /* Garante que o conteúdo fique acima da pseudo-classe */
+  z-index: 2;
 }
-
 
 .texto{
   display: flex;
@@ -89,4 +95,48 @@ h1{
   border: 0.5px solid #C5A880;
   background-color: #C5A880;
   justify-content: center;
+}
+
+#container-resenhas{
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.resenha-item{
+  display: flex;
+  gap:1em;
+}
+
+.conteudo-container{
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.info-container{
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.imagem{
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+.nome{
+  color: #C5A880;
+}
+
+.resenhas{
+  padding: 10px;
+  background-color:aliceblue;
+  width: 1000px;
+  height: 100px;
+  border-radius: 10px;
+  border: 3px double #C5A880;
 }

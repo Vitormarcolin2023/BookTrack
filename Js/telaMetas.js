@@ -1,6 +1,7 @@
 window.onload = function() {
     carregarMetas();
     carregarMetaAnual();
+    lerStatusDeLeitura();
 };
 
 function mostrarPromptMetas() {
@@ -36,31 +37,6 @@ function mostrarPromptExcluirMetas() {
     });
 }
 
-function lerExcluirMeta() {
-    var metas = obterMetasDoLocalStorage();
-
-    var checkboxesExcluir = document.querySelectorAll("#inputExcluirMeta input[type='checkbox']");
-
-    checkboxesExcluir.forEach(function(checkboxExcluir) {
-        if (checkboxExcluir.checked) {
-            var originalMeta = checkboxExcluir.id.replace("excluir_", "");
-
-            var originalCheckbox = document.getElementById(originalMeta);
-            if (originalCheckbox) {
-                originalCheckbox.parentElement.remove();
-            }
-
-            metas = metas.filter(function(meta) {
-                return meta !== originalMeta;
-            });
-        }
-    });
-
-    salvarMetasNoLocalStorage(metas);
-
-    document.getElementById("modalExcluirMeta").style.display = "none";
-}
-
 function salvarMetasNoLocalStorage(metas) {
     localStorage.setItem("metas", JSON.stringify(metas));
 }
@@ -68,6 +44,34 @@ function salvarMetasNoLocalStorage(metas) {
 function obterMetasDoLocalStorage() {
     var metas = localStorage.getItem("metas");
     return metas ? JSON.parse(metas) : [];
+}
+
+function salvarMetaAnualNoLocalStorage(metaAnual) {
+    localStorage.setItem("metaAnual", metaAnual);
+}
+
+function obterMetaAnualDoLocalStorage() {
+    return localStorage.getItem("metaAnual");
+}
+
+function lerMetaAnual() {
+    var metaAnual = document.getElementById("inputMetaAnual").value;
+
+    if (metaAnual) {
+        document.getElementById("metaAnualContainer").innerText = metaAnual;
+        salvarMetaAnualNoLocalStorage(metaAnual);
+    }
+
+    document.getElementById("inputMetaAnual").value = "";
+    document.getElementById("modalMetaAnual").style.display = "none";
+}
+
+function carregarMetaAnual() {
+    var metaAnual = obterMetaAnualDoLocalStorage();
+    
+    if (metaAnual) {
+        document.getElementById("metaAnualContainer").innerText = metaAnual;
+    }
 }
 
 function lerImput() {
@@ -97,34 +101,6 @@ function lerImput() {
     document.getElementById("promptMeta").style.display = "none";
 }
 
-function salvarMetaAnualNoLocalStorage(metaAnual) {
-    localStorage.setItem("metaAnual", metaAnual);
-}
-
-function obterMetaAnualDoLocalStorage() {
-    return localStorage.getItem("metaAnual");
-}
-
-function carregarMetaAnual() {
-    var metaAnual = obterMetaAnualDoLocalStorage();
-    
-    if (metaAnual) {
-        document.getElementById("metaAnualContainer").innerText = metaAnual;
-    }
-}
-
-function lerMetaAnual() {
-    var metaAnual = document.getElementById("inputMetaAnual").value;
-
-    if (metaAnual) {
-        document.getElementById("metaAnualContainer").innerText = metaAnual;
-        salvarMetaAnualNoLocalStorage(metaAnual);
-    }
-
-    document.getElementById("inputMetaAnual").value = "";
-    document.getElementById("modalMetaAnual").style.display = "none";
-}
-
 function carregarMetas() {
     var metas = obterMetasDoLocalStorage();
 
@@ -143,4 +119,48 @@ function carregarMetas() {
 
         document.getElementById("listaCheckbox").appendChild(checkboxContainer);
     });
+}
+
+function lerExcluirMeta() {
+    var metas = obterMetasDoLocalStorage();
+
+    var checkboxesExcluir = document.querySelectorAll("#inputExcluirMeta input[type='checkbox']");
+
+    checkboxesExcluir.forEach(function(checkboxExcluir) {
+        if (checkboxExcluir.checked) {
+            var originalMeta = checkboxExcluir.id.replace("excluir_", "");
+
+            var originalCheckbox = document.getElementById(originalMeta);
+            if (originalCheckbox) {
+                originalCheckbox.parentElement.remove();
+            }
+
+            metas = metas.filter(function(meta) {
+                return meta !== originalMeta;
+            });
+        }
+    });
+
+    salvarMetasNoLocalStorage(metas);
+
+    document.getElementById("modalExcluirMeta").style.display = "none";
+}
+
+function obterStatusDeLeitura() {
+    var listaLivros = localStorage.getItem("listaLivros");
+    return listaLivros ? JSON.parse(listaLivros) : [];
+}
+
+function lerStatusDeLeitura() {
+    var statusElemento = document.getElementById("statusLivro");
+    var listaLivros = obterStatusDeLeitura();
+    var livrosConcluidos = 0;
+
+    listaLivros.forEach(function(livro) {
+        if (livro.progresso === "concluido") {
+            livrosConcluidos += 1;
+        }
+    });
+
+    statusElemento.innerHTML = "Livros concluídos: " + livrosConcluidos;
 }
