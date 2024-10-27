@@ -34,17 +34,21 @@ body{
   margin-left: auto;
 }
 
+.container-mostrarMetas{
+  display: flex;
+  flex-direction: column;
+}
+
 .texto-imagem {
   position: relative; /* Importante para o posicionamento da pseudo-classe */
   background-image: url(/resource/1.jpg);
   background-size: cover;
   width: 100%;
   height: 350px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   padding: 30px;
   color: #F5F5DC;
+  display: flex;
+  justify-content:space-around;
 }
 
 .texto-imagem::before {
@@ -63,6 +67,44 @@ body{
   z-index: 2; /* Garante que o conteúdo fique acima da pseudo-classe */
 }
 
+.container-meta{
+  background-color: rgb(44, 44, 45, 0.6);
+  width: 300px;
+  height: 230px;
+  border-radius: 20px;
+}
+
+.container-spinner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.metaAnual{
+  background-color: #F5F5DC;
+  color: #1D1B20;
+  width: 160px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 2px;
+}
+
+.titulo-metas{
+  color: #F5F5DC;
+  -webkit-text-stroke: #b09070 0.3px;
+  border-bottom: 0.2px solid #C5A880;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 5px;
+}
+
 .texto{
   display: flex;
   flex-direction: column;
@@ -71,6 +113,23 @@ body{
 
 h1{
   color: #C5A880;
+}
+
+h3{
+  color: #F5F5DC;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.lista-metas li{
+  color: #F5F5DC;
+  list-style-type: none;
+  margin-top: 8px;
+  border-bottom: 0.1px solid #C5A880;
+}
+
+.lista-metas input[type="checkbox"]{
+  margin-right: 6px;
 }
 
 .container{
@@ -193,16 +252,23 @@ h1{
     height: 210px;
     object-fit: cover;
     cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
   }
 
+.imagem-capa:hover{
+    transform: scale(1.03);
+   box-shadow: 0 8px 16px rgb(29, 27, 32);
+}
+
   .seta{
-    display: none;
     background-color: transparent;
     border: none;
     cursor: pointer;
     height: 35px;
     align-self: center;
   }
+
 
 @media (max-width: 1000px) {
   .container {

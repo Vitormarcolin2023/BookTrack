@@ -1,12 +1,74 @@
 var livros = JSON.parse(localStorage.getItem("listaLivros")) || []; // recupera as infos em local storage
+const metas = JSON.parse(localStorage.getItem("metas")) || []; // recuoera as metas do local storage
+const metaAnual = JSON.parse(localStorage.getItem("metaAnual"));
 var recentes = []; // separa e armazena informações dos recentes
 var trash = []; // separa e armazena informações de BookTrash
 
 var divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
 var booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
 
-separaRecentes();
-separaBookTrash();
+window.onload = function() {
+    separaRecentes();
+    separaBookTrash();
+    mostrarRecentes(recentes);
+    mostrarTrash(trash);
+    carregarMetaAnual();
+};
+
+console.log(metas);
+console.log(metaAnual);
+
+function carregarMetaAnual() {
+    var livrosConcluidos = livros.filter(livro => livro.progresso === "concluido").length;
+    let livrosLidos = document.getElementById("metaAnualContainer");
+
+    if (metaAnual) {
+        desenharCirculoProgresso(metaAnual, livrosConcluidos);
+    }
+
+    livrosLidos.innerText = `Livros concluídos: ${livrosConcluidos}`;
+}
+
+function desenharCirculoProgresso(metaAnual, livrosConcluidos) {
+    const canvas = document.getElementById("progressCircle");
+    const ctx = canvas.getContext("2d");
+
+    const radius = 40;
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const progresso = Math.min(livrosConcluidos / metaAnual, 1);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, -0.5 * Math.PI, (2 * Math.PI * progresso) - 0.5 * Math.PI);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = "#C5A880";
+    ctx.stroke();
+
+    ctx.fillStyle = "#C5A880";
+    ctx.font = "28px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(metaAnual, centerX, centerY);
+}
+
+function mostrarMetas(){
+    let listaMetas = document.getElementById("lista-metas");
+
+    metas.forEach(item => {
+        const li = document.createElement("li");
+        const checkbox = document.createElement("input");
+        const textoMeta = document.createTextNode(item);
+
+        checkbox.type = "checkbox";
+        li.appendChild(checkbox);
+        li.appendChild(textoMeta);
+        listaMetas.appendChild(li);
+    });
+}
+
+mostrarMetas();
 
 
 // função para incluir no array "recentes" os últimos 10 livros adicionados
@@ -18,7 +80,6 @@ function separaRecentes(){
 }
 
 
-
 //função para incluir no array "trash" os livros classificados com 1 estrela. Cria um array com tamanho da quantidade de livros com 1 estrela.
 function separaBookTrash(){
     for(let i = 0; i<livros.length; i++){
@@ -26,40 +87,30 @@ function separaBookTrash(){
             trash.unshift(livros[i]); // adiciona no inicio do array
         }
     }
-    console.log(trash);
 }
-
-window.onload = function() {
-    mostrarRecentes(recentes);
-    mostrarTrash(trash);
-};
 
 // função para mostrar lidos recentemente
 function mostrarRecentes(lista){
     // array para armazenar os IDs das divs para apresentar livros
    let imagensRecentes = [
-    document.getElementById("capa1"),
-    document.getElementById("capa2"),
-    document.getElementById("capa3"),
-    document.getElementById("capa4"),
-    document.getElementById("capa5")
+        document.getElementById("capa1"),
+        document.getElementById("capa2"),
+        document.getElementById("capa3"),
+        document.getElementById("capa4"),
+        document.getElementById("capa5")
    ];
-
    // Limpa as informações exibidas para receber novo array sem sobrescrever informações
    for(let i=0; i<5; i++){
         imagensRecentes[i].src = "";
         imagensRecentes[i].style.display = "none";
    }
-
    // laço for para percorrer o array de recentes e apresentar para o usuário
    for(let i=0; i<5; i++){
-
         if(lista[i]){ // verifica se a posição possui informação
             imagensRecentes[i].src = lista[i].capa; // acessa src da img que está no indice e manda a capa para ela
             imagensRecentes[i].style.display = "block"; // torna visivel
         }
-   }
-    
+   } 
 }
 
 
@@ -125,15 +176,6 @@ const setaEsquerda = document.getElementById("seta-esquerda");
 const setaDireitaTrash = document.getElementById("seta-direita-trash");
 const setaEsquerdaTrash = document.getElementById("seta-esquerda-trash");
 
-// Por definição, todas as setas são escondidas. Esse bloco verifica se o array recentes e trash possuem mais de 5, assim torna visivel
-if(recentes.length > 5){
-    setaDireita.style.display = "block";
-}
-
-if(trash.length > 5){
-    setaDireitaTrash.style.display = "block";
-}
-
 // Controla aparição e sumiço de setas e livros a serem mostrados
 setaDireita.addEventListener("click", function(){
     setaEsquerda.style.display = "block";
@@ -164,6 +206,7 @@ setaEsquerdaTrash.addEventListener("click", function(){
 document.getElementById("pesquisar-livro").addEventListener("input", function(){
    
 })
+
 
 
 

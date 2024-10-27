@@ -18,16 +18,28 @@
       </div>
     </header> 
   <!--Essa é a imagem principal que servirá de fundo para mostrar as metas(invés das resenhas)-->
-  <div class="conteiner"> 
+
     <!--Nessa div será inserido as infos de metas que ficarão em cima da imagem-->
-    <div class="texto-imagem">
-      <img src="../resource/image.png" alt="Imagem de perfil">
-      <div class="texto">
-        <h1>Olá, Maju!</h1>
-        <h2>O que vamos ler hoje?</h2>
-      </div>
+    <div>
+      <div class="texto-imagem">
+        <div class="container-mostrarMetas">
+          <h1 class="titulo-metas">Suas metas de leitura:</h1>
+          <div class="container-meta">
+            <h3>Meta de leitura anual</h3>
+            <div class="container-spinner">
+              <canvas id="progressCircle" width="200" height="100"></canvas>
+              <div class="metaAnual" id="metaAnualContainer"></div>
+            </div> 
+          </div>
+        </div>
+        <div class="texto">
+          <ul class="lista-metas" id="lista-metas">
+            
+          </ul>
+        </div>
     </div>
-    </div>
+   </div>
+    
 
       <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
       <div class="container">
@@ -73,27 +85,27 @@
       <!--carrossel de lidos recentemente e BookTrash-->
       <h2 class="titulo-carrossel">Lidos recentemente</h2>
       <div class="carrossel-livros" id="recente">
-        <button class="seta" id="seta-esquerda"><img src="/resource/Seta esquerda.svg" alt="seta"></button>
+        <button class="seta" id="seta-esquerda" style="display: none;"><img src="/resource/Seta esquerda.svg" alt="seta"></button>
         <ul class="container-livros">
-          <li class="info-livro"><img class="imagem-capa" id="capa1" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa2" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa3" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa4" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa5" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa1" src="" alt="Imagem da capa"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa2" src="" alt="Imagem da capa"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa3" src="" alt="Imagem da capa"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa4" src="" alt="Imagem da capa"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa5" src="" alt="Imagem da capa"></li>
         </ul>
         <button class="seta" id="seta-direita"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
       </div>
       <h2 class="titulo-carrossel">BookTrash</h2>
       <div class="carrossel-livros" id="divBooktrash">
-        <button class="seta" id="seta-direita-trash"><img src="/resource/Seta esquerda.svg" alt="seta"></button>
+        <button class="seta" id="seta-esquerda-trash" style="display: none;"><img src="/resource/Seta esquerda.svg" alt="seta"></button>
         <ul class="container-livros">
-          <li class="info-trash"><img class="imagem-capa" id="trash1" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash2" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash3" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash4" src="" alt="Imagem da capa" style="display: none;"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash5" src="" alt="Imagem da capa" style="display: none;"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash1" src="" alt="Imagem da capa"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash2" src="" alt="Imagem da capa"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash3" src="" alt="Imagem da capa"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash4" src="" alt="Imagem da capa"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash5" src="" alt="Imagem da capa"></li>
         </ul>
-        <button class="seta" id="seta-esquerda-trash"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
+        <button class="seta" id="seta-direita-trash"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
       </div>
       </div>
 
