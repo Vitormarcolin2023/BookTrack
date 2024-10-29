@@ -4,6 +4,16 @@ window.onload = function() {
     lerStatusDeLeitura();
 };
 
+function salvarEstadoCheckbox(id, checked) {
+    let estadosCheckbox = JSON.parse(localStorage.getItem("estadosCheckbox")) || {};
+    estadosCheckbox[id] = checked;
+    localStorage.setItem("estadosCheckbox", JSON.stringify(estadosCheckbox));
+}
+
+function carregarEstadosCheckbox() {
+    return JSON.parse(localStorage.getItem("estadosCheckbox")) || {};
+}
+
 function mostrarPromptMetas() {
     document.getElementById("promptMeta").style.display = "flex";
 }
@@ -95,6 +105,10 @@ function lerImput() {
         var metas = obterMetasDoLocalStorage();
         metas.push(meta);
         salvarMetasNoLocalStorage(metas);
+
+        newCheckbox.addEventListener("change", function() {
+            salvarEstadoCheckbox(meta, newCheckbox.checked);
+        });
     }
 
     document.getElementById("inputPrompt").value = "";
@@ -103,11 +117,14 @@ function lerImput() {
 
 function carregarMetas() {
     var metas = obterMetasDoLocalStorage();
+    var estadosCheckbox = carregarEstadosCheckbox();
 
     metas.forEach(function(meta) {
         var newCheckbox = document.createElement("input");
         newCheckbox.type = "checkbox";
         newCheckbox.id = meta;
+
+        newCheckbox.checked = estadosCheckbox[meta] || false;
 
         var newLabel = document.createElement("label");
         newLabel.htmlFor = meta;
@@ -118,6 +135,10 @@ function carregarMetas() {
         checkboxContainer.appendChild(newLabel);
 
         document.getElementById("listaCheckbox").appendChild(checkboxContainer);
+
+        newCheckbox.addEventListener("change", function() {
+            salvarEstadoCheckbox(meta, newCheckbox.checked);
+        });
     });
 }
 
@@ -138,6 +159,10 @@ function lerExcluirMeta() {
             metas = metas.filter(function(meta) {
                 return meta !== originalMeta;
             });
+
+            let estadosCheckbox = carregarEstadosCheckbox();
+            delete estadosCheckbox[originalMeta];
+            localStorage.setItem("estadosCheckbox", JSON.stringify(estadosCheckbox));
         }
     });
 
