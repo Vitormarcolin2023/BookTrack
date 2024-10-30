@@ -48,6 +48,7 @@ body {
 h2 {
   color: #FFFFFF;
   -webkit-text-stroke: #C5A880 1px;
+  border-bottom: 0.2px solid #c5a880;
   font-size: 2.5em;
   margin-bottom: 20px;
   margin-left: 120px;
@@ -79,8 +80,9 @@ h2 {
   background-color: #f5f5dc;
   color: #1d1b20;
   border-radius: 5px;
-  padding: 8px;
+  padding: 4px;
   border: none; /* Remove a borda padrão */
+  margin: 6px;
 }
 
 .carrossel-livros {

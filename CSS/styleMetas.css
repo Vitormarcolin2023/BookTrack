@@ -73,6 +73,14 @@ h1{
   color: #FFFFFF;
   font-size: 28px;
   -webkit-text-stroke: #C5A880 1px;
+  border-bottom: 0.2px solid #c5a880;
+  margin: 30px;
+}
+
+h2{
+  color: #FFFFFF;
+  font-size: 28px;
+  -webkit-text-stroke: #C5A880 1px;
   margin: 30px;
 }
 
