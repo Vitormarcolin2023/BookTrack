@@ -145,6 +145,7 @@ h3{
 
 #resultado{
   display: none;
+  flex-direction: column;
   background-color: transparent;
 }
 

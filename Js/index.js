@@ -246,8 +246,8 @@ document.getElementById("pesquisar-livro").addEventListener("input", function(e)
                 document.getElementById("pesquisar-livro").value = livro.titulo;
                 exibeResultado.innerHTML = ''; // Limpa os resultados após a seleção
             });
-
             exibeResultado.appendChild(item);
+            exibeResultado.style.display = "flex";
         });
     } else {
         // se não encontrar resultados, mostra a mensagem
@@ -256,6 +256,8 @@ document.getElementById("pesquisar-livro").addEventListener("input", function(e)
         exibeResultado.appendChild(item);
     }
 });
+
+
 
 
 /*
