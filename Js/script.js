@@ -60,7 +60,7 @@ function novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa){
 
 const inputImagem = document.getElementById('upload-imagem'); // recebe o arquivo selecionado
 const previewImagem = document.getElementById('preview-imagem'); // recebe a tag img para mostrar a imagem
-previewImagem.src = "http://127.0.0.1:5501/resource/imagemPadrao.png"; // caminho para a imagem padrão definida
+previewImagem.src = "url/resource/imagemPadrao.png"; // caminho para a imagem padrão definida
 
 // Quando adicionada uma imagem, carrega a função para transformar a imagem em Base64 e apresentar ao usuário
 inputImagem.addEventListener('change', function(event) {

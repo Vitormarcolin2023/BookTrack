@@ -4,14 +4,10 @@ const metaAnual = JSON.parse(localStorage.getItem("metaAnual"));
 var recentes = []; // separa e armazena informações dos recentes
 var trash = []; // separa e armazena informações de BookTrash
 
-var divRecentes = document.getElementById("recente"); // container para apresentar lidos recentemente
-var booktrash = document.getElementById("divBooktrash"); //container para apresentar bookTrash
-
 window.onload = function() {
     separaRecentes();
     separaBookTrash();
-    mostrarRecentes(recentes);
-    mostrarTrash(trash);
+    mostrarMetas();
     carregarMetaAnual();
 };
 
@@ -85,15 +81,13 @@ function mostrarMetas(){
 }
 
 
-mostrarMetas();
-
 
 // função para incluir no array "recentes" os últimos 10 livros adicionados
 function separaRecentes(){
     for(let i = livros.length-1; i>=livros.length-10; i--){ // começa do último livro incluso e para com 10
         recentes.push(livros[i]); // inclui no array recentes
     }
-    console.log(recentes) // teste :)
+    mostrarRecentes(recentes);
 }
 
 
@@ -104,6 +98,7 @@ function separaBookTrash(){
             trash.unshift(livros[i]); // adiciona no inicio do array
         }
     }
+    mostrarTrash(trash);
 }
 
 // função para mostrar lidos recentemente
@@ -225,8 +220,15 @@ setaEsquerdaTrash.addEventListener("click", function(){
 document.getElementById("pesquisar-livro").addEventListener("input", function(e) {
     let digitadoPesquisa = e.target.value.toLowerCase();
     let exibeResultado = document.getElementById("resultado");
+
+    // verifica se o campo input está vazio e esconde a lista
+    if (digitadoPesquisa === '') {
+        exibeResultado.innerHTML = ''; 
+        exibeResultado.style.display = 'none'; 
+        return; 
+    }
     
-    // Limpa os resultados anteriores
+    // Limpa os resultados 
     exibeResultado.innerHTML = '';
 
     // Filtra os livros com base no texto digitado
