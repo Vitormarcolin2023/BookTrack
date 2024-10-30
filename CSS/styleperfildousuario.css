@@ -139,3 +139,12 @@ h1{
   border-radius: 10px;
   border: 3px double #C5A880;
 }
+
+.avaliacao {
+    display: inline-block;
+}
+
+.star-label {
+    font-size: 1.5em;
+    color: #C5A880;
+}
