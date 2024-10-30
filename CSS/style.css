@@ -81,7 +81,7 @@ body{
   align-items: center;
   width: inherit;
   height: 100px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .metaAnual{
@@ -93,6 +93,7 @@ body{
   font-weight: bold;
   font-size: 15px;
   padding: 2px;
+  margin-top: 18px;
 }
 
 .titulo-metas{
@@ -111,14 +112,14 @@ body{
   padding: 20px;
 }
 
-h1{
-  color: #C5A880;
-}
-
 h3{
   color: #F5F5DC;
   text-align: center;
   margin-top: 16px;
+}
+
+.lista-metas{
+  margin-top: 26px;
 }
 
 .lista-metas li{
@@ -130,6 +131,29 @@ h3{
 
 .lista-metas input[type="checkbox"]{
   margin-right: 6px;
+}
+
+.pesquisa-resultado{
+  display: flex;
+  flex-direction: column;
+}
+
+#resultado{
+  display: none;
+  background-color: transparent;
+}
+
+#resultado li{
+  border-radius: 6px;
+  list-style: none;
+  border: 0.2px solid #b09070;
+  background-color: #F5F5DC;
+  margin-top: 1px;
+  padding: 2px;
+}
+
+#resultado li:hover{
+  background-color: #C5A880;
 }
 
 .container{
@@ -238,7 +262,15 @@ h3{
     width: 100%;
   }
 
+  #teste{
+    display: none;
+    position: absolute;
+    top: 89%;
+    right: 50%;
+  }
+
   .info-livro, .info-trash{
+    position: relative;
     list-style: none;
     border: none;
     background-color: rgb(44, 44, 45, 0.5);
@@ -315,6 +347,18 @@ h3{
   }
   .container-livros .info-trash:nth-last-child(-n+1){
     display: none;
+  }
+  .titulo-metas{
+    font-size: 23px;
+    width: 225px;
+  }
+
+  .container-meta{
+    width: 225px;
+  }
+
+  .lista-metas li{
+    font-size: 14px;
   }
 }
 

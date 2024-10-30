@@ -43,16 +43,18 @@
 
       <!--Essa div tem a barra de pesquisa e filtragem, utilizei a div para ajudar a alinhar-->
       <div class="container">
-        <form>
-          <div class="input-pesquisa">
-            <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro">
-            <img src="/resource/Icone-pesquisa.svg" alt="icone de pesquisa" class="icone-pesquisar-livro">
+          <div class="pesquisa-resultado">
+          <form>
+            <div class="input-pesquisa">
+              <input type="search" name="pesquisar-livro" id="pesquisar-livro" placeholder="Pesquisar livro por titulo">
+              <img src="/resource/Icone-pesquisa.svg" alt="icone de pesquisa" class="icone-pesquisar-livro">
+            </div>
+          </form>
+          <div class="container-resultado">
+            <ul id="resultado">
+              
+            </ul>
           </div>
-        </form>
-        <div class="container-resultado">
-          <ul id="resultado">
-             
-          </ul>
         </div>
         <div class="container-filtragem">
           <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
@@ -87,11 +89,11 @@
       <div class="carrossel-livros" id="recente">
         <button class="seta" id="seta-esquerda" style="display: none;"><img src="/resource/Seta esquerda.svg" alt="seta"></button>
         <ul class="container-livros">
-          <li class="info-livro"><img class="imagem-capa" id="capa1" src="" alt="Imagem da capa"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa2" src="" alt="Imagem da capa"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa3" src="" alt="Imagem da capa"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa4" src="" alt="Imagem da capa"></li>
-          <li class="info-livro"><img class="imagem-capa" id="capa5" src="" alt="Imagem da capa"></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa1" src="" alt=""><span id="teste"></span></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa2" src="" alt=""></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa3" src="" alt=""></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa4" src="" alt=""></li>
+          <li class="info-livro"><img class="imagem-capa" id="capa5" src="" alt=""></li>
         </ul>
         <button class="seta" id="seta-direita"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
       </div>
@@ -99,11 +101,11 @@
       <div class="carrossel-livros" id="divBooktrash">
         <button class="seta" id="seta-esquerda-trash" style="display: none;"><img src="/resource/Seta esquerda.svg" alt="seta"></button>
         <ul class="container-livros">
-          <li class="info-trash"><img class="imagem-capa" id="trash1" src="" alt="Imagem da capa"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash2" src="" alt="Imagem da capa"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash3" src="" alt="Imagem da capa"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash4" src="" alt="Imagem da capa"></li>
-          <li class="info-trash"><img class="imagem-capa" id="trash5" src="" alt="Imagem da capa"></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash1" src="" alt=""></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash2" src="" alt=""></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash3" src="" alt=""></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash4" src="" alt=""></li>
+          <li class="info-trash"><img class="imagem-capa" id="trash5" src="" alt=""></li>
         </ul>
         <button class="seta" id="seta-direita-trash"><img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta"></button>
       </div>

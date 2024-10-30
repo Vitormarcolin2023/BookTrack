@@ -102,12 +102,14 @@ function mostrarRecentes(lista){
    // Limpa as informações exibidas para receber novo array sem sobrescrever informações
    for(let i=0; i<5; i++){
         imagensRecentes[i].src = "";
-        imagensRecentes[i].style.display = "none";
+        imagensRecentes[i].alt = "";
+        imagensRecentes[i].style.display = "none";   
    }
    // laço for para percorrer o array de recentes e apresentar para o usuário
    for(let i=0; i<5; i++){
         if(lista[i]){ // verifica se a posição possui informação
             imagensRecentes[i].src = lista[i].capa; // acessa src da img que está no indice e manda a capa para ela
+            imagensRecentes[i].alt = lista[i].titulo;
             imagensRecentes[i].style.display = "block"; // torna visivel
         }
    } 
@@ -203,11 +205,52 @@ setaEsquerdaTrash.addEventListener("click", function(){
 
 
 // testes
-document.getElementById("pesquisar-livro").addEventListener("input", function(){
-   
+document.getElementById("pesquisar-livro").addEventListener("input", function(e) {
+    let digitadoPesquisa = e.target.value.toLowerCase();
+    let exibeResultado = document.getElementById("resultado");
+    
+    // Limpa os resultados anteriores
+    exibeResultado.innerHTML = '';
+
+    // Filtra os livros com base no texto digitado
+    const resultados = livros.filter(livro => 
+        livro.titulo.toLowerCase().includes(digitadoPesquisa) ||
+        livro.autor.toLowerCase().includes(digitadoPesquisa)
+    );
+
+    // Verifica os resultados e cria a lista
+    if (resultados.length > 0) {
+        resultados.forEach(livro => {
+            const item = document.createElement("li");
+            item.textContent = `${livro.titulo} - ${livro.autor}`;
+            
+            // Adiciona evento de clique para o item, se necessário
+            item.addEventListener("click", () => {
+                document.getElementById("pesquisar-livro").value = livro.titulo;
+                exibeResultado.innerHTML = ''; // Limpa os resultados após a seleção
+            });
+
+            exibeResultado.appendChild(item);
+        });
+    } else {
+        // se não encontrar resultados, mostra a mensagem
+        const item = document.createElement("li");
+        item.textContent = "Nenhum livro encontrado";
+        exibeResultado.appendChild(item);
+    }
+});
+
+
+/*
+var troca = document.getElementById("teste");
+document.getElementById("capa1").addEventListener("mouseover", function(){
+    troca.innerText = "ola";
+    troca.style.display = "block"
 })
 
-
-
+document.getElementById("capa1").addEventListener("mouseout", function(){
+    troca.style.display = "none";
+})
+*/
 
 

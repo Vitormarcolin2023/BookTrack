@@ -24,6 +24,7 @@ document.getElementById("form-livro").addEventListener("submit", function(event)
     // querySelector procura pelos elementos input com nome "star" e verfica se foram checadas. Utilza operador ternário para obter o valor das que forão checadas ? = if : = else
     const avaliacao = document.querySelector('input[name="star"]:checked') ? document.querySelector('input[name="star"]:checked').value : '';
     const capa = previewImagem.src; // armazena a src da imagem apresentada
+    
 
     let livro; // variável para criar novo 
 
@@ -59,6 +60,7 @@ function novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa){
 
 const inputImagem = document.getElementById('upload-imagem'); // recebe o arquivo selecionado
 const previewImagem = document.getElementById('preview-imagem'); // recebe a tag img para mostrar a imagem
+previewImagem.src = "http://127.0.0.1:5501/resource/imagemPadrao.png"; // caminho para a imagem padrão definida
 
 // Quando adicionada uma imagem, carrega a função para transformar a imagem em Base64 e apresentar ao usuário
 inputImagem.addEventListener('change', function(event) {
