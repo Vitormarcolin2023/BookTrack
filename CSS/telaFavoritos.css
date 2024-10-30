@@ -19,6 +19,7 @@ body {
   height: 100px;
   padding: 20px;
   border-bottom: 0.1px solid #c5a880;
+  margin-bottom: 40px;
 }
 
 .botao-cabecalho {
@@ -37,43 +38,31 @@ body {
 .container {
   display: flex;
   margin-top: 14px;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  justify-content:space-around;
-  flex-direction: column; /* Organiza os elementos em coluna */
+  justify-content: space-around;
+  flex-direction: column;
 }
 
-/* Estilo do título "Meus Livros" */
 h2 {
-  color: #FFFFFF;
-  -webkit-text-stroke: #C5A880 1px;
+  color: #ffffff;
+  -webkit-text-stroke: #c5a880 1px;
   border-bottom: 0.2px solid #c5a880;
   font-size: 2.5em;
   margin-bottom: 20px;
-  margin-left: 120px;
+  margin-left: 150px;
 }
 
 .titulo-filtragem {
   color: #c5a880;
 }
 
-/* Estilos dos filtros */
 .filtros {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  margin-right: 120px;
-}
-
-.select-filtro {
-  display: flex;
-  flex-direction: column;
-}
-
-.select-filtro label {
-  color: #c5a880;
-  margin-right: 10px;
+  margin-right: 150px;
 }
 
 #filtro-genero {
@@ -81,7 +70,7 @@ h2 {
   color: #1d1b20;
   border-radius: 5px;
   padding: 4px;
-  border: none; /* Remove a borda padrão */
+  border: none;
   margin: 6px;
 }
 
@@ -107,7 +96,7 @@ h2 {
 .info-favoritos {
   list-style: none;
   border: none;
-  background-color: rgb(44, 44, 45, 0.5);
+  background-color: rgba(44, 44, 45, 0.5);
   width: 140px;
   height: 210px;
   box-shadow: 0px 2px 4px rgba(45, 45, 45, 0.5);
@@ -137,45 +126,36 @@ h2 {
 
 @media (max-width: 480px) {
   .cabecalho {
-    flex-direction: column; /* Coloca logo e botões em coluna */
-    height: auto; /* Ajusta altura do cabeçalho automaticamente */
-    padding: 10px; /* Reduz padding do cabeçalho */
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
   }
 
   .logo {
-    width: 150px; /* Reduz tamanho da logo */
-    margin-bottom: 10px; /* Adiciona margem abaixo da logo */
+    width: 150px;
+    margin-bottom: 10px;
   }
 
   .botoes-cabecalho {
-    flex-direction: column; /* Coloca botões em coluna */
-    align-items: center; /* Centraliza botões horizontalmente */
+    flex-direction: column;
+    align-items: center;
   }
 
   .botao-cabecalho {
-    margin: 5px 0; /* Ajusta margem dos botões */
+    margin: 5px 0;
   }
 
   h2 {
-    font-size: 2em; /* Reduz tamanho do título */
+    font-size: 2em;
   }
 
   .filtros {
-    justify-content: center; /* Centraliza os filtros */
-    margin-bottom: 10px; /* Reduz margem inferior dos filtros */
+    justify-content: center;
+    margin-bottom: 10px;
   }
 
   .select-filtro {
-    flex-direction: column; /* Coloca label e select em coluna */
-    align-items: flex-start; /* Alinha label e select à esquerda */
-  }
-
-  .select-filtro label {
-    margin-bottom: 5px; /* Adiciona margem abaixo do label */
-  }
-
-  .livro {
-    width: 50%; /* Faz com que cada livro ocupe 100% da largura */
-    margin: 10px 0; /* Ajusta margem dos livros */
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

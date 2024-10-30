@@ -96,6 +96,10 @@ h1{
   cursor: pointer;
 }
 
+.botoes-acao:hover {
+  background-color: #b09070;
+}
+
 #container-resenhas{
   margin: 30px;
   display: flex;
