@@ -1,115 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meus Livros</title>
-    <link rel="stylesheet" href="../CSS/styleMeusLivros.css" />
-  </head>
-  <body>
+    <title>Favoritos</title>
+    <link rel="stylesheet" href="/CSS/telaFavoritos.css" />
+</head>
+
+<body>
     <header class="cabecalho">
-      <a href="../index.html"><img class="logo" src="../resource/BookTrack_Logo.svg" alt="Logo" /></a>
-      <div class="botoes-cabecalho">
-        <button class="botao-cabecalho">
-          <a href="../index.html"
-            ><img src="../resource/home.svg" alt="Home"
-          /></a>
-        </button>
-        <button class="botao-cabecalho">
-          <a href="../Telas/perfildousuario.html"
-            ><img src="../resource/Perfil-icon.svg" alt="Perfil"
-          /></a>
-        </button>
-      </div>
+<a href="index.html"><img class="logo" src="../resource/BookTrack_Logo.svg" alt="Logo" /></a>
+        <div class="botoes-cabecalho">
+            <button class="botao-cabecalho">
+                <a href="index.html"><img src="../resource/home.svg" alt="Home" /></a>
+            </button>
+            <button class="botao-cabecalho">
+                <a href="../Telas/perfildousuario.html"><img src="../resource/Perfil-icon.svg" alt="Perfil" /></a>
+            </button>
+        </div>
     </header>
     <main>
-      <div class="container">
-        <div class="filtros">
-          <h2>Meus Livros</h2>
-          <div class="select-filtro">
-            <label for="filtro-genero">Filtrar livros por:</label>
-            <select id="filtro-genero">
-              <option value="genero">Gênero</option>
-              <option value="todos">Todos</option>
-              <option value="autoAjuda">Auto Ajuda</option>
-              <option value="aventura">Aventura</option>
-              <option value="comedia">Comédia</option>
-              <option value="drama">Drama</option>
-              <option value="distopia">Distopia</option>
-              <option value="fantasia">Fantasia</option>
-              <option value="sciFi">Ficção Científica</option>
-              <option value="naoFiccao">Não Ficção</option>
-              <option value="romance">Romance</option>
-              <option value="suspense">Suspense</option>
-              <option value="terror">Terror</option>
-            </select>
+        <div class="container">
+            <div class="filtros">
+                <h2>Meus Livros</h2>
+                <div class="container-filtragem">
+                  <h4 class="titulo-filtragem">Filtrar gênero por:</h4>
+                  <select id="filtro-genero">
+                    <option value="">Todos</option>
+                    <option value="autoAjuda">Auto Ajuda</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="distopia">Distopia</option>
+                    <option value="fantasia">Fantasia</option>
+                    <option value="naoFiccao">Não Ficção</option>
+                    <option value="romance">Romance</option>
+                    <option value="sciFi">Ficção Científica</option>
+                    <option value="suspense">Suspense</option>
+                    <option value="terror">Terror</option>
+                  </select>        
+                </div>
+            </div>
+            <br /><br /><br /><br />
+            <div class="carrossel-livros">
+              <div class="container-livros" id="divBookfavoritos">
+                  <button class="seta" id="seta-esquerda-favoritos" style="display: none;">
+                      <img src="/resource/Seta esquerda.svg" alt="seta">
+                  </button>
+                  <ul class="container-livros">
+                      <li class="info-favoritos"><img class="imagem-capa" id="favoritos1" src="" alt="Imagem da capa"></li>
+                      <li class="info-favoritos"><img class="imagem-capa" id="favoritos2" src="" alt="Imagem da capa"></li>
+                      <li class="info-favoritos"><img class="imagem-capa" id="favoritos3" src="" alt="Imagem da capa"></li>
+                      <li class="info-favoritos"><img class="imagem-capa" id="favoritos4" src="" alt="Imagem da capa"></li>
+                      <li class="info-favoritos"><img class="imagem-capa" id="favoritos5" src="" alt="Imagem da capa"></li>
+                  </ul>
+                  <button class="seta" id="seta-direita-favoritos">
+                      <img src="/resource/chevron_right_24dp_1D1B20_FILL0_wght400_GRAD0_opsz24.svg" alt="seta">
+                  </button>
+              </div>
           </div>
-        </div>
-        <br /><br /><br /><br />
-        <div class="container-livros">
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-          <div class="livro">
-            <a href="../Telas/telaEditarLivro.html" class="livro">
-              <img src="../resource/livro-exemplo.webp" alt="Capa do Livro" />
-            </a>
-          </div>
-        </div>
-      </div>
+            </div>
     </main>
-  </body>
-  <script src="../Js/scriptMeusLivros.js"></script>
+    <script src="/Js/telaMeusLivros.js"></script>
+</body>
 </html>

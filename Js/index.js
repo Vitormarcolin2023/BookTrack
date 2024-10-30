@@ -53,6 +53,17 @@ function desenharCirculoProgresso(metaAnual, livrosConcluidos) {
     ctx.fillText(metaAnual, centerX, centerY);
 }
 
+function salvarEstadoCheckbox(meta, checked) {
+    let estados = JSON.parse(localStorage.getItem("estadosCheckbox")) || {};
+    estados[meta] = checked;
+    localStorage.setItem("estadosCheckbox", JSON.stringify(estados));
+}
+
+function carregarEstadoCheckbox(meta) {
+    let estados = JSON.parse(localStorage.getItem("estadosCheckbox")) || {};
+    return estados[meta] || false;
+}
+
 function mostrarMetas(){
     let listaMetas = document.getElementById("lista-metas");
 
@@ -62,11 +73,17 @@ function mostrarMetas(){
         const textoMeta = document.createTextNode(item);
 
         checkbox.type = "checkbox";
+        checkbox.checked = carregarEstadoCheckbox(item);
+        checkbox.addEventListener("change", function() {
+            salvarEstadoCheckbox(item, checkbox.checked);
+        });
+
         li.appendChild(checkbox);
         li.appendChild(textoMeta);
         listaMetas.appendChild(li);
     });
 }
+
 
 mostrarMetas();
 
