@@ -273,5 +273,3 @@ document.getElementById("capa1").addEventListener("mouseout", function(){
     troca.style.display = "none";
 })
 */
-
-

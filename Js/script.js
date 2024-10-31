@@ -3,9 +3,13 @@ const popupAPI = document.getElementById("pesquisaAPI"); // armazena o container
 
 // clicando no botão fechar define o container como display none
 document.getElementById("fechar").addEventListener("click", function(event){
-    event.preventDefault()
-    popupAPI.style.display = "none";
+    event.preventDefault();
+    fecharPopUp();
 })
+
+function fecharPopUp(){
+    popupAPI.style.display = "none";
+}
 
 // abre o pop up
 document.getElementById("botaoAPI").addEventListener("click", function(){
@@ -60,7 +64,6 @@ function novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa){
 
 const inputImagem = document.getElementById('upload-imagem'); // recebe o arquivo selecionado
 const previewImagem = document.getElementById('preview-imagem'); // recebe a tag img para mostrar a imagem
-previewImagem.src = "url/resource/imagemPadrao.png"; // caminho para a imagem padrão definida
 
 // Quando adicionada uma imagem, carrega a função para transformar a imagem em Base64 e apresentar ao usuário
 inputImagem.addEventListener('change', function(event) {
@@ -86,3 +89,53 @@ document.getElementById("descartar").addEventListener("click", function(){
     previewImagem.src = "";
     previewImagem.style.display = "none";
 })
+
+document.getElementById("form-api").addEventListener("submit", function(event){
+    event.preventDefault();
+    const chaveAPI = "AIzaSyCE0kOoaza4IWYP-fdin3C0Kct921X8QEw";
+    let livroPesquisaAPI = document.getElementById("titulo-api").value;
+    let resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.innerHTML = "";
+
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(livroPesquisaAPI)}&key=${chaveAPI}`)
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Erro na requisição: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.totalItems > 0) {
+                let contador = 0;
+                const maxLivros = 5;
+                data.items.forEach(item => {
+
+                    if(contador>maxLivros) return;
+
+                    let tituloApi = item.volumeInfo.title;
+                    let autorApi = item.volumeInfo.authors ? item.volumeInfo.authors.join(', ') : 'Autor desconhecido';
+                    let capaApi = item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : 'URL da imagem não disponível';
+                    resultadoDiv.innerHTML += `
+                        <div>
+                            <img src="${capaApi}}" alt="Capa do livro" />
+                            <button onclick="salvarInfo('${tituloApi}', '${autorApi}', '${capaApi}')">Selecionar</button>
+                        </div>
+                        `;
+                        contador ++;
+                    });
+                } else {
+                    resultadoDiv.innerHTML = '<p>Nenhum livro encontrado.</p>';
+                }
+            })
+        .catch(error => {
+             console.error('Erro:', error);
+        });
+  });
+
+function salvarInfo(titulo, autor, capa){
+    document.getElementById("titulo-livro").value = titulo;
+    document.getElementById("autor-livro").value = autor;
+    previewImagem.src = capa;
+    previewImagem.style.display = "block";
+    fecharPopUp()
+}

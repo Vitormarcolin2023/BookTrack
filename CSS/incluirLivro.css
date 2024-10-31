@@ -64,15 +64,11 @@ body{
 
 .conteudo-pesquisaAPI{
   display: flex;
-  position: fixed;
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  justify-content: center;
+  width: 519px;
+  height: 300px;
   flex-direction: column;
   background-color: #2C2C2D;
   align-self: center;
-  align-items: center;
 }
 
  .pesquisaAPI{
@@ -85,7 +81,6 @@ body{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
   justify-content: center;
-  align-items: center;
 }
 
  .botao-fechar{
@@ -101,16 +96,48 @@ body{
  .botao-pesquisa{
   width: 150px;
   height: 23px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
+  align-self: center;
   background-color: #C5A880;
   border: 0.1px solid #b09070;
   border-radius: 5px;
   color: #1D1B20;
   font-weight: bold;
   cursor: pointer;
+  margin-bottom: auto;
+ }
+
+ .tituloAPI{
+  color: #C5A880;
+  font-size: 24px;
+  align-self: center;
+  margin-bottom: auto;
+ }
+
+ #resultado button{
+  background-color: #F5F5DC;
+  border: 0.1px solid #C5A880;
+  cursor: pointer;
+  font-family: "Koh Santepheap";
+  font-weight: bold;
+  font-size: 11px;
+  width: 70px;
+  padding: 1px;
+  border-radius: 4px;
+  margin-left: 6px;
+ }
+
+ #resultado button:hover{
+  background-color: #C5A880;
+ }
+
+ .inputApi{
+  width: 400px;
+  border-radius: 6px;
+  height: 25px;
+  border: 0.1px solid #C5A880;
+  padding: 4px;
+  align-self: center;
+  margin-bottom: auto;
  }
 
  .titulo{
@@ -118,6 +145,7 @@ body{
   margin-bottom: 8px;
   font-weight: bold;
   font-size: 24px;
+  margin-top: 0;
  }
 
  .container-input{
@@ -258,6 +286,16 @@ body{
 
 .botao-capa:hover{
   background-color: #b09070;
+}
+
+#resultado{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#resultado img{
+  width: 80px;
+  margin-left: 3px;
 }
 
 @media (max-width: 1000px) {
