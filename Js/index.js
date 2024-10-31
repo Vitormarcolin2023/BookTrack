@@ -116,11 +116,20 @@ function mostrarRecentes(lista) {
     document.getElementById("capa5"),
   ];
 
+  let editar = [
+    document.getElementById("editar1"),
+    document.getElementById("editar2"),
+    document.getElementById("editar3"),
+    document.getElementById("editar4"),
+    document.getElementById("editar5"),
+  ]
+
   for (let i = 0; i < 5; i++) {
     imagensRecentes[i].src = "";
     imagensRecentes[i].alt = "";
     imagensRecentes[i].style.display = "none";
-    imagensRecentes[i].onclick = null; // remove o evento de clique antigo
+    editar[i].style.display = "none";
+    editar[i].onclick = null; // remove o evento de clique antigo
   }
 
   for (let i = 0; i < 5; i++) {
@@ -128,7 +137,8 @@ function mostrarRecentes(lista) {
       imagensRecentes[i].src = lista[i].capa;
       imagensRecentes[i].alt = lista[i].titulo;
       imagensRecentes[i].style.display = "block";
-      imagensRecentes[i].onclick = () => selecionarLivroParaEdicao(lista[i].id); // adiciona o clique
+      editar[i].style.display = "block";
+      editar[i].onclick = () => selecionarLivroParaEdicao(lista[i].id); // adiciona o clique
     }
   }
 }
@@ -141,18 +151,27 @@ function mostrarTrash(listaT) {
     document.getElementById("trash4"),
     document.getElementById("trash5"),
   ];
+  let editar = [
+    document.getElementById("editT1"),
+    document.getElementById("editT2"),
+    document.getElementById("editT3"),
+    document.getElementById("editT4"),
+    document.getElementById("editT5"),
+  ]
 
   for (let i = 0; i < 5; i++) {
     imagensTrash[i].src = "";
     imagensTrash[i].style.display = "none";
-    imagensTrash[i].onclick = null;
+    editar[i].style.display = "none";
+    editar[i].onclick = null;
   }
 
   for (let i = 0; i < listaT.length; i++) {
     if (listaT[i]) {
       imagensTrash[i].src = listaT[i].capa;
       imagensTrash[i].style.display = "block";
-      imagensTrash[i].onclick = () => selecionarLivroParaEdicao(listaT[i].id);
+      editar[i].style.display = "block";
+      editar[i].onclick = () => selecionarLivroParaEdicao(listaT[i].id);
     } else {
       imagensTrash[i].style.display = "none";
     }

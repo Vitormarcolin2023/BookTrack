@@ -337,6 +337,18 @@ h3{
   align-self: center;
 }
 
+.botao-editar{
+  display: none;
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  padding: 2px;
+  background-color: rgb(44, 44, 45, 0.8); 
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .container-vizualizar{
   display: none; /* Oculta o modal por padrão */
   position: fixed;
