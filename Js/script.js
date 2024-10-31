@@ -28,12 +28,13 @@ document.getElementById("form-livro").addEventListener("submit", function(event)
     // querySelector procura pelos elementos input com nome "star" e verfica se foram checadas. Utilza operador ternário para obter o valor das que forão checadas ? = if : = else
     const avaliacao = document.querySelector('input[name="star"]:checked') ? document.querySelector('input[name="star"]:checked').value : '';
     const capa = previewImagem.src; // armazena a src da imagem apresentada
+    const id = Date.now();
     
 
     let livro; // variável para criar novo 
 
     // chama a função novoLivro para criar novo objeto e armazena os valores em livro
-    livro = new novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa); 
+    livro = new novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa, id); 
 
     if(titulo && autor && resenha && genero && progresso && avaliacao && capa){
         livros.push(livro) // adiciona as informações do objeto no array livros
@@ -52,7 +53,7 @@ document.getElementById("form-livro").addEventListener("submit", function(event)
 })
 
 // função para criar um objeto com as informações do formulário
-function novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa){
+function novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa, id){
     this.titulo = titulo;
     this.autor = autor;
     this.resenha = resenha;
@@ -60,6 +61,7 @@ function novoLivro(titulo, autor, resenha, genero, progresso, avaliacao, capa){
     this.progresso = progresso;
     this.avaliacao = avaliacao;
     this.capa = capa;
+    this.id = id;
 }
 
 const inputImagem = document.getElementById('upload-imagem'); // recebe o arquivo selecionado

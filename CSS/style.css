@@ -369,21 +369,23 @@ h3{
   }
   .info-livro,
   .info-trash {
-    width: 100px;
+    width: 85px;
     height: 140px;
     margin-right: 6px;
     margin-left: 6px;
+    overflow: hidden;
+  }
+  .info-livro img{
+    width: 100%;
+  }
+  .info-trash img{
+    width: 100%;
   }
   .imagem-capa {
     width: 100px;
     height: 140px;
   }
-  .container-livros .info-livro:nth-last-child(-n + 1) {
-    display: none;
-  }
-  .container-livros .info-trash:nth-last-child(-n + 1) {
-    display: none;
-  }
+
   .titulo-metas{
     font-size: 23px;
     width: 225px;
@@ -399,10 +401,21 @@ h3{
 }
 
 @media (max-width: 600px) {
-  .container-livros .info-livro:nth-last-child(-n + 2) {
-    display: none;
+  .carrossel-livros{
+    width: 95%;
   }
-  .container-livros .info-trash:nth-last-child(-n + 2) {
-    display: none;
+  .info-livro,
+  .info-trash {
+    width: 70px;
+    height: 120px;
+    margin-right: 6px;
+    margin-left: 6px;
+    overflow: hidden;
+  }
+  .info-livro img{
+    width: 100%;
+  }
+  .info-trash img{
+    width: 100%;
   }
 }
