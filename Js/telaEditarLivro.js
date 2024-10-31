@@ -69,4 +69,30 @@ function salvarLivroEditado() {
     window.location.href = "/index.html";
 }
 
+function excluirLivro() {
+    const idLivro = localStorage.getItem("livroParaEdicao"); // Obtém o ID do livro a ser excluído
+    console.log("ID do livro para exclusão:", idLivro);
+
+    if (idLivro && confirm("Tem certeza de que deseja excluir este livro?")) {
+        let listaLivros = JSON.parse(localStorage.getItem("listaLivros")) || []; // Obtém a lista de livros do local storage
+
+        // Filtra a lista para remover o livro com o ID correspondente
+        listaLivros = listaLivros.filter(function(livro) {
+            return livro.id !== Number(idLivro); // Se idLivro for um número
+        });
+
+        console.log("Lista de livros após a exclusão:", listaLivros);
+        localStorage.setItem("listaLivros", JSON.stringify(listaLivros)); // Atualiza o local storage com a nova lista
+
+        // Remove a referência do livro para edição
+        localStorage.removeItem("livroParaEdicao");
+
+        alert("Livro excluído com sucesso!"); // Feedback ao usuário
+        window.location.href = "/index.html"; // Redireciona para a página inicial
+    } else {
+        console.log("Exclusão cancelada ou ID do livro não encontrado.");
+    }
+}
+
+
 window.onload = carregarDadosDoLivro;
