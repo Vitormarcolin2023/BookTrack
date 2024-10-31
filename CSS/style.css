@@ -393,6 +393,25 @@ h3{
   background-color: #1d1b20;
 }
 
+.capa-img img{
+  object-fit: cover;
+  width: 120px;
+  height: 160px;
+}
+
+.classific, .gender{
+  display: flex;
+  flex-direction: column;
+}
+
+#genero-vizualizar{
+  width: 80px;
+  background-color: #F5F5DC;
+  border: 0.1px solid #C5A880;
+  height: 20px;
+  border-radius: 6px;
+}
+
 #titulo-visualizar, #autor-vizualizar{
   border: 0.1px solid #C5A880;
   width: 300px;

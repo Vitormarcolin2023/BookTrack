@@ -130,6 +130,7 @@ function mostrarRecentes(lista) {
     imagensRecentes[i].style.display = "none";
     editar[i].style.display = "none";
     editar[i].onclick = null; // remove o evento de clique antigo
+    imagensRecentes[i].onclick = null;
   }
 
   for (let i = 0; i < 5; i++) {
@@ -139,6 +140,7 @@ function mostrarRecentes(lista) {
       imagensRecentes[i].style.display = "block";
       editar[i].style.display = "block";
       editar[i].onclick = () => selecionarLivroParaEdicao(lista[i].id); // adiciona o clique
+      imagensRecentes[i].onclick = () => vizualizarLivro(lista[i]);
     }
   }
 }
@@ -164,6 +166,7 @@ function mostrarTrash(listaT) {
     imagensTrash[i].style.display = "none";
     editar[i].style.display = "none";
     editar[i].onclick = null;
+    imagensTrash[i].onclick = null;
   }
 
   for (let i = 0; i < listaT.length; i++) {
@@ -172,6 +175,7 @@ function mostrarTrash(listaT) {
       imagensTrash[i].style.display = "block";
       editar[i].style.display = "block";
       editar[i].onclick = () => selecionarLivroParaEdicao(listaT[i].id);
+      imagensTrash[i].onclick = () => vizualizarLivro(listaT[i]);
     } else {
       imagensTrash[i].style.display = "none";
     }
@@ -181,6 +185,37 @@ function mostrarTrash(listaT) {
 function selecionarLivroParaEdicao(livroId) {
   localStorage.setItem("livroParaEdicao", livroId);
   window.location.href = "/TELAS/telaEditarLivro.html";
+}
+
+function vizualizarLivro(livroVisu){
+  document.getElementById("container-vizualizar").style.display = "flex";
+  let capaV = document.getElementById("capaV");
+  let tituloV = document.getElementById("titulo-visualizar");
+  let autorV = document.getElementById("autor-vizualizar");
+  let resenhaV = document.getElementById("resenha-vizualizar");
+  let classifV = document.getElementById("stars-vizualizar");
+  let generoV = document.getElementById("genero-vizualizar");
+  
+  capaV.src = livroVisu.capa;
+  tituloV.innerText = livroVisu.titulo;
+  autorV.innerText = livroVisu.autor;
+  resenhaV.innerText = livroVisu.resenha;
+  generoV.innerText = livroVisu.genero;
+
+  classifV.innerHTML = '';
+
+
+  for (let i = 1; i <= 5; i++) {
+    let star = document.createElement("span");
+    star.innerHTML = i <= livroVisu.classificacao ? "★" : "☆";
+    star.classList.add("star");
+    classifV.appendChild(star);
+}
+
+}
+
+function fechar(){
+  document.getElementById("container-vizualizar").style.display = "none";
 }
 
 // Função para filtrar gêneros

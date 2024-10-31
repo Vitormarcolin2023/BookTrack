@@ -112,12 +112,12 @@
       </div>
 
       <!-- PopUp para visualizar livro -->
-       <div class="container-vizualizar">
+       <div class="container-vizualizar" id="container-vizualizar">
         <div class="popUp-informacao">
-          <button class="bot-fechar"><img src="/resource/close-icon.svg" alt="fechar"></button>
+          <button class="bot-fechar" onclick="fechar()"><img src="/resource/close-icon.svg" alt="fechar"></button>
           <div class="capa-info">
             <div class="capa-img">
-              <img src="" alt="">
+              <img id="capaV" src="" alt="">
             </div>
             <div class="titulo-autor">
               <h2>Título</h2>
@@ -125,10 +125,14 @@
               <h2>Autor</h2>
               <div id="autor-vizualizar"></div>
               <div class="classi-genero">
-                <h2>Classificação</h2>
-                <div id="stars-vizualizar"></div>
-                <h2>Gênero</h2>
-                <div id="genero-vizualizar"></div>
+                <div class="classific">
+                  <h2>Classificação</h2>
+                  <div id="stars-vizualizar"></div>
+                </div>
+                <div class="gender">
+                  <h2>Gênero</h2>
+                  <div id="genero-vizualizar"></div>
+                </div>
               </div>
             </div>
           </div>
