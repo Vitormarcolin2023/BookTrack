@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editar Livro</title>
     <link rel="stylesheet" href="../CSS/styleEditaisLivro.css" />
-  </head>
-  <body>
+</head>
+<body>
     <div class="modal-overlay">
-      <div class="modal">
-        <div class="botoes-acao-modal">
-          <button class="botao-acao">
-            <a href="../Telas/telaMeusLivros.html">Voltar</a>
-          </button>
-        </div>
-        <h2>Deseja editar este livro?</h2>
-        <div class="conteudo-modal">
-          <div class="secao-esquerda">
-            <div class="container-imagem">
-              <img
-                src="../resource/livro-exemplo.webp"
-                alt="Capa do Livro"
-                class="capa-livro"
-              />
-              <label for="upload-capa" class="botao-upload">
-                <img src="../resource/upload-icon.svg" alt="Upload" />
-                <input type="file" id="upload-capa" style="display: none" />
-              </label>
+        <div class="modal">
+            <div class="botoes-acao-modal">
+                <button class="botao-acao">
+                    <a href="/index.html">Voltar</a>
+                </button>
             </div>
-          </div>
-          <div class="secao-direita">
+            <h2>Deseja editar este livro?</h2>
+            <div class="conteudo-modal">
+                <div class="secao-esquerda">
+                    <div class="container-imagem">
+                        <img
+                            src="../resource/livro-exemplo.webp"
+                            alt="Capa do Livro"
+                            class="capa-livro"
+                        />
+                        <label for="upload-capa" class="botao-upload">
+                            <img src="../resource/upload-icon.svg" alt="Upload" />
+                            <input type="file" id="upload-capa" style="display: none" />
+                        </label>
+                    </div>
+                </div>
+                <div class="secao-direita">
+                    <div class="input-group">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" />
+                    </div>
+                    <div class="input-group">
+                        <label for="autor">Autor</label>
+                        <input type="text" id="autor" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="categorias">
+                <label>Gênero</label>
+                <div class="generos">
+                    <button class="genero ativo">Comédia</button>
+                    <button class="genero">Auto Ajuda</button>
+                    <button class="genero">Aventura</button>
+                    <button class="genero">Drama</button>
+                    <button class="genero">Distopia</button>
+                    <button class="genero">Fantasia</button>
+                    <button class="genero">Ficção Científica</button>
+                    <button class="genero">Não Ficção</button>
+                    <button class="genero">Romance</button>
+                    <button class="genero">Suspense</button>
+                    <button class="genero">Terror</button>
+                </div>
+            </div>
+
             <div class="input-group">
-              <label for="titulo">Título</label>
-              <input type="text" id="titulo" value="A Guerra dos Tronos" />
+                <label for="progresso">Progresso</label>
+                <select id="progresso">
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Concluído">Concluído</option>
+                    <option value="Abandonado">Abandonado</option>
+                </select>
             </div>
+
             <div class="input-group">
-              <label for="autor">Autor</label>
-              <input type="text" id="autor" value="George R. R. Martin" />
+                <label for="resenha">Resenha</label>
+                <textarea id="resenha"></textarea>
             </div>
-          </div>
-        </div>
 
-        <div class="categorias">
-          <label>Gênero</label>
-          <div class="generos">
-            <button class="genero ativo">Comédia</button>
-            <button class="genero">Auto Ajuda</button>
-            <button class="genero">Aventura</button>
-            <button class="genero">Comédia</button>
-            <button class="genero">Drama</button>
-            <button class="genero">Distopia</button>
-            <button class="genero">Fantasia</button>
-            <button class="genero">Ficção Científica</button>
-            <button class="genero">Não Ficção</button>
-            <button class="genero">Romance</button>
-            <button class="genero">Suspense</button>
-            <button class="genero">Terror</button>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="progresso">Progresso</label>
-          <select id="progresso">
-            <option value="Em andamento">Em andamento</option>
-            <option value="Concluído">Concluído</option>
-            <option value="Abandonado">Abandonado</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <label for="resenha">Resenha</label>
-          <textarea id="resenha">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis tortor sit amet victor pharetra finibus. Duis sed enim fringilla cecilia odio iaculis porta. Nulla luctus venenatis leo, at luctus lorem josi sed. Integer id maximus sem. Proin fringilla lorem ac. lipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis tortor sit amet lectus samara finibus. Stan twice. Duis sed enim fringilla lethícia porta. Nulla luctus </textarea
-          >
-        </div>
-
-        <div class="classificacao-booktrash">
-          <div class="classificacao">
-            <label>Classificação</label>
-            <div class="estrelas">
-              <span class="estrela">★</span>
-              <span class="estrela">★</span>
-              <span class="estrela">★</span>
-              <span class="estrela">★</span>
-              <span class="estrela">☆</span>
+            <div class="classificacao-booktrash">
+                <div class="classificacao">
+                    <label>Classificação</label>
+                    <div class="estrelas">
+                        <span class="estrela">★</span>
+                        <span class="estrela">★</span>
+                        <span class="estrela">★</span>
+                        <span class="estrela">★</span>
+                        <span class="estrela">☆</span>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="botoes-modal">
-            <button class="botao-acao">BookTrash</button>
-          </div>
+            <div class="botoes-acao-modal">
+                <button class="botao-acao">Excluir livro</button>
+                <button class="botao-acao">Salvar</button>
+            </div>
         </div>
-
-        <div class="botoes-acao-modal">
-          <button class="botao-acao">Excluir livro</button>
-          <button class="botao-acao">Salvar</button>
-        </div>
-      </div>
     </div>
     <script src="../Js/telaEditarLivro.js"></script>
-  </body>
+</body>
 </html>

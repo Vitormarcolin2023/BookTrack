@@ -1,69 +1,34 @@
-estrelasContainer.addEventListener("click", (event) => {
-    const estrelaClicada = event.target.closest(".estrela");
+    // Função para carregar os dados do livro
+    function carregarDadosDoLivro() {
+        // Recupera a lista de livros do local storage
+        const listaLivros = JSON.parse(localStorage.getItem("listaLivros")) || [];
+        
+        // Recupera o ID do livro a ser editado
+        const livroId = localStorage.getItem("livroParaEdicao");
 
-    if (estrelaClicada) {
-      classificacao = parseInt(estrelaClicada.dataset.classificacao, 10);
-      atualizarEstrelas();
+        // Encontra o livro correspondente ao ID
+        const livro = listaLivros.find(livro => livro.id == livroId);
+
+        // Se o livro for encontrado, preenche os campos
+        if (livro) {
+            document.getElementById("titulo").value = livro.titulo;
+            document.getElementById("autor").value = livro.autor;
+            document.getElementById("progresso").value = livro.progresso;
+            document.getElementById("resenha").value = livro.resenha;
+
+            // Preencher os gêneros, se necessário
+            // Aqui você pode adicionar lógica para marcar o gênero selecionado, se houver
+            // Exemplo:
+            const generos = document.querySelectorAll('.genero');
+            generos.forEach(genero => {
+                if (livro.genero === genero.innerText) {
+                    genero.classList.add('ativo'); // Adiciona a classe ativo ao gênero correspondente
+                } else {
+                    genero.classList.remove('ativo'); // Remove a classe ativo dos outros gêneros
+                }
+            });
+        }
     }
-  });
 
-
-
-function atualizarEstrelas() {
-    for (let i = 1; i <= 5; i++) {
-      const estrela = document.querySelector(`.estrela[data-classificacao="${i}"]`);
-      if (i <= classificacao) {
-        estrela.textContent = '★';
-      } else {
-        estrela.textContent = '☆';
-      }
-    }
-  }
-
-  // Função para carregar informações do livro no formulário de edição
-function carregarLivroParaEdicao(livroId) {
-  // Recupera o array de livros do localStorage
-  const listaLivros = JSON.parse(localStorage.getItem("listaLivros")) || [];
-  
-  // Encontra o livro específico pelo ID
-  const livro = listaLivros.find(l => l.id === livroId);
-  
-  if (!livro) {
-    alert("Livro não encontrado.");
-    return;
-  }
-
-  // Preenche o formulário com as informações do livro
-  document.getElementById("titulo").value = livro.titulo || "";
-  document.getElementById("autor").value = livro.autor || "";
-  
-  // Seleciona o gênero atual
-  const botoesGenero = document.querySelectorAll(".genero");
-  botoesGenero.forEach(botao => {
-    if (botao.innerText === livro.genero) {
-      botao.classList.add("ativo");
-    } else {
-      botao.classList.remove("ativo");
-    }
-  });
-
-  // Define o progresso de leitura
-  document.getElementById("progresso").value = livro.progresso || "";
-
-  // Preenche a resenha
-  document.getElementById("resenha").value = livro.resenha || "";
-
-  // Exibe a avaliação com estrelas
-  const estrelas = document.querySelectorAll(".estrelas .estrela");
-  estrelas.forEach((estrela, index) => {
-    estrela.textContent = index < livro.avaliacao ? "★" : "☆";
-  });
-
-  // Mostra a capa do livro, se disponível
-  const capa = document.querySelector(".capa-livro");
-  if (livro.capa) {
-    capa.src = livro.capa;
-  } else {
-    capa.src = "../resource/livro-exemplo.webp"; // Capa padrão se não houver imagem
-  }
-}
+    // Chama a função quando a página carrega
+    window.onload = carregarDadosDoLivro;
