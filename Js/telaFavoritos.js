@@ -24,21 +24,30 @@ function mostrarFavoritos(listaF){
         document.getElementById("favoritos3"),
         document.getElementById("favoritos4"),
         document.getElementById("favoritos5")
-    ]
+    ];
 
-    for(let i=0; i<5; i++){
+    let editar = [
+        document.getElementById("editT1"),
+        document.getElementById("editT2"),
+        document.getElementById("editT3"),
+        document.getElementById("editT4"),
+        document.getElementById("editT5"),
+      ]
+
+    for(let i = 0; i < 5; i++){
         imagensFavoritos[i].src = "";
         imagensFavoritos[i].style.display = "none";
-   }
+        editar[i].style.display = "none";
+        editar[i].onclick = null;
+    }
 
-    for(let i=0; i<listaF.length; i++){
-
+    for(let i = 0; i < listaF.length; i++){
         if(listaF[i]){
             imagensFavoritos[i].src = listaF[i].capa;
-            imagensFavoritos[i].style.display= "block";
-            imagensFavoritos[i].onclick = () => selecionarLivroParaEdicao(listaF[i].id); // adiciona o clique
-        }
-        else{
+            imagensFavoritos[i].style.display = "block";
+            editar[i].style.display = "block";
+            editar[i].onclick = () => selecionarLivroParaEdicao(listaF[i].id);
+            } else {
             imagensFavoritos[i].style.display = "none";
         }
     }

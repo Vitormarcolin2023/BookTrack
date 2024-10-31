@@ -94,6 +94,7 @@ h2 {
 }
 
 .info-favoritos {
+  position: relative;
   list-style: none;
   border: none;
   background-color: rgba(44, 44, 45, 0.5);
@@ -122,6 +123,18 @@ h2 {
   cursor: pointer;
   height: 35px;
   align-self: center;
+}
+
+.botao-editar{
+  display: none;
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  padding: 2px;
+  background-color: rgb(44, 44, 45, 0.8); 
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {
