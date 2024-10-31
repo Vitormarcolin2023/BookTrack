@@ -23,11 +23,17 @@ function mostrarFavoritos(listaF){
         if(listaF[i]){
             imagensFavoritos[i].src = listaF[i].capa;
             imagensFavoritos[i].style.display = "block";
+            imagensFavoritos[i].onclick = () => selecionarLivroParaEdicao(listaF[i].id); // adiciona o clique
         } else {
             imagensFavoritos[i].style.display = "none";
         }
     }
 }
+
+function selecionarLivroParaEdicao(livroId) {
+    localStorage.setItem("livroParaEdicao", livroId);
+    window.location.href = "/TELAS/telaEditarLivro.html";
+  }
 
 document.getElementById("filtro-genero").addEventListener("change", function () {
     let arrayGenero = [];

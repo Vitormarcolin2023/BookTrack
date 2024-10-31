@@ -338,7 +338,7 @@ h3{
 }
 
 .container-vizualizar{
-  display: flex; /* Oculta o modal por padrão */
+  display: none; /* Oculta o modal por padrão */
   position: fixed;
   z-index: 1;
   left: 0;

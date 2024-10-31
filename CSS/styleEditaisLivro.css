@@ -156,9 +156,14 @@ textarea {
 
 .estrela {
   font-size: 1.8em;
-  color: #c5a880;
   cursor: pointer;
 }
+
+
+.estrela.ativa {
+  color: #c5a880; /* Ajuste para a cor que preferir */
+}
+
 
 /* Estilos dos botões de ação */
 .botoes-modal {

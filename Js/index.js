@@ -16,7 +16,7 @@ console.log(metaAnual);
 
 function carregarMetaAnual() {
   var livrosConcluidos = livros.filter(
-    (livro) => livro.progresso === "concluido"
+    (livro) => livro.progresso === "Concluído"
   ).length;
   let livrosLidos = document.getElementById("metaAnualContainer");
 

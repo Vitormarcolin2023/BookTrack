@@ -23,10 +23,6 @@
                             alt="Capa do Livro"
                             class="capa-livro"
                         />
-                        <label for="upload-capa" class="botao-upload">
-                            <img src="../resource/upload-icon.svg" alt="Upload" />
-                            <input type="file" id="upload-capa" style="display: none" />
-                        </label>
                     </div>
                 </div>
                 <div class="secao-direita">
@@ -75,19 +71,20 @@
             <div class="classificacao-booktrash">
                 <div class="classificacao">
                     <label>Classificação</label>
-                    <div class="estrelas">
-                        <span class="estrela">★</span>
-                        <span class="estrela">★</span>
-                        <span class="estrela">★</span>
-                        <span class="estrela">★</span>
-                        <span class="estrela">☆</span>
+                    <div class="estrelas" id="estrelas-avaliacao">
+                        <span class="estrela" data-value="1">★</span>
+                        <span class="estrela" data-value="2">★</span>
+                        <span class="estrela" data-value="3">★</span>
+                        <span class="estrela" data-value="4">★</span>
+                        <span class="estrela" data-value="5">★</span>
                     </div>
                 </div>
             </div>
+            
 
             <div class="botoes-acao-modal">
                 <button class="botao-acao">Excluir livro</button>
-                <button class="botao-acao">Salvar</button>
+                <button class="botao-acao" onclick="salvarLivroEditado()">Salvar</button>
             </div>
         </div>
     </div>

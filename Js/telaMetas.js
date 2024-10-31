@@ -77,7 +77,7 @@ function lerMetaAnual() {
 function carregarMetaAnual() {
     var metaAnual = obterMetaAnualDoLocalStorage();
     var listaLivros = obterStatusDeLeitura();
-    var livrosConcluidos = listaLivros.filter(livro => livro.progresso === "concluido").length;
+    var livrosConcluidos = listaLivros.filter(livro => livro.progresso === "Concluído").length;
 
     if (metaAnual) {
         desenharCirculoProgresso(metaAnual, livrosConcluidos);
@@ -182,7 +182,7 @@ function lerStatusDeLeitura() {
     var livrosConcluidos = 0;
 
     listaLivros.forEach(function(livro) {
-        if (livro.progresso === "concluido") {
+        if (livro.progresso === "Concluído") {
             livrosConcluidos += 1;
         }
     });
